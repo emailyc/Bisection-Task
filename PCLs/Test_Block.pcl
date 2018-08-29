@@ -1,0 +1,36 @@
+# ------------------------------- PCL Part ------------------------------
+BLOCK = "test";
+
+
+
+#SOME CONSTANTS
+int ROW = 49;
+int COLLUMN = 4;
+
+array<string> sequence[ROW][COLLUMN] = read_sequence_file( logfile.subject() ); #the function returns a 2-D string array.
+
+loop
+    int i = 1
+until
+    i > COLLUMN
+begin
+		
+	loop
+		int j = 1
+	until
+		j > ROW
+	begin
+		
+		play_ITI_trial( random( 1000, 2000 ) );
+		int sound_idx = int(sequence[j][i]);		
+		play_sound_trial( sound_idx, BLOCK, i, j );
+			
+		j = j + 1;
+	end;
+	
+	play_break_trial( "BREAK" );
+	play_ITI_trial( ONE_SEC ); #Just a 2 second buffer so the next block don't jump on you.
+	
+	i = i + 1;
+end;
+

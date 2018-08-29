@@ -1,0 +1,115 @@
+# ------------------------------- PCL Part ------------------------------
+
+#  Functions 
+
+sub 
+	play_instruct_trial( string instruction_text )
+begin
+	instruct_text.set_caption( instruction_text ); 
+	instruct_text.load();
+	instruct_trial.present(); 
+	instruct_text.unload();
+end;	
+
+	
+sub
+    play_sound_trial( int sound_idx, string block, int block_number, int trial_number )
+begin
+	
+	#SOME CONSTANTS
+	int MIDDLE_IDX = 4;
+	int RESPONSE_TIME = 2000;
+
+	
+	anchor_text.load();
+	string filename = sounds[sound_idx].get_wavefile().filename();
+	filename = filename.replace( stimulus_directory, "" ); #remove path
+	filename = filename.replace( ".wav", "" );#remove extension name
+	
+	
+	
+	#sound_event.set_event_code( block + "_" + filename );
+	
+	# Update event code & store data
+	sound_event.set_event_code( 
+		"Stim;" +
+		logfile.subject() + ";" +
+		block + ";" +
+		string( block_number ) + ";" +
+		string( trial_number ) + ";" +
+		string( sound_idx ) 
+	);		
+		
+	
+	
+	sounds[sound_idx].get_wavefile().load();
+	sound_event.set_stimulus( sounds[sound_idx] );
+	if ( sound_idx <= MIDDLE_IDX ) then #In this case the 4th sound is closer to the short anchor than the 5th sound.  
+		sound_event.set_port_code ( SHORT_port );
+	else
+		sound_event.set_port_code ( LONG_port );
+	end;
+	sound_trial.set_duration( int(filename) + RESPONSE_TIME ); #Duration of stimuli + 2000ms response time.
+	sound_trial.present();
+	sounds[sound_idx].get_wavefile().unload();
+	anchor_text.unload();
+	
+end;
+
+sub
+   play_feedback_trial
+begin
+	fb_text.load();
+	fb_trial.present();
+	fb_text.unload();
+end;
+
+sub
+   play_end_block_trial( string caption )
+begin
+	end_block_text.set_caption( caption );
+	end_block_text.load();
+	end_block_trial.present();	
+end;
+
+
+sub
+   play_ITI_trial( int time )
+begin
+	int this_iti = time;
+	ITI_trial.set_duration( this_iti );	#A random number of seconds[1, 2]
+	ITI_trial.present();
+end;
+
+sub
+    play_break_trial( string caption )
+begin
+	caption_1.set_caption( caption );
+	caption_1.load();
+	caption_2.load();
+	break_trial.present();
+	caption_1.unload();
+	caption_2.unload();
+end;
+
+
+sub array<string, 2> read_sequence_file( string num)
+begin
+	array<string>trial_seq[0][0]; # dimension: 4 blks * 49 trials
+	string stim_filename = stimulus_directory + "\\trial_seq_by_subj\\" + num + "_4blk_trialseq.txt";
+	term.print(stim_filename);
+	input_file in = new input_file;
+	if ( !file_exists( stim_filename ) ) then
+		exit( "Error: The stimulus file '" + stim_filename + "', does not exist." );
+	end;
+	in.open( stim_filename );
+
+	loop until in.end_of_file() begin
+		 string this_line = in.get_line();
+		 array<string> temp[0];
+		 this_line.split( " ", temp );
+		 trial_seq.add( temp );
+	end;
+	
+	return trial_seq; #2-d string array 
+end;

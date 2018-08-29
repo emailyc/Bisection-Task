@@ -1,0 +1,54 @@
+# ------------------------------- PCL Part ------------------------------
+BLOCK = "practice";
+
+
+#Make integer array to host order of stimuli
+array<int> practice_sounds_idx[sounds.count()];
+practice_sounds_idx.fill( 1, sounds.count(), 1, 1 ); #An array of integer from 1 to the number of durations.
+practice_sounds_idx.shuffle(); #Randomise the order of 
+
+
+#SOME CONSTANTS
+int FB_DURATION_ANCHOR = 700;
+int FB_DURATION_OTHERS = 100;
+
+
+loop
+    int i = 1
+until
+    i > 3 #loop the 7 different durations 3 times.
+begin
+		
+	loop
+		int j = 1
+	until
+		j > practice_sounds_idx.count() #the count should be 7
+	begin
+		play_ITI_trial( ONE_SEC );
+		
+		int sound_idx = practice_sounds_idx[j];
+		play_sound_trial( sound_idx, BLOCK, i, j );
+		
+
+		if ( sound_idx == FIRST_SOUND_IDX ) then #if shortest or longest sound
+			fb_text.set_caption( lang.get_text( "Feedback Short" ) );
+			fb_trial.set_duration(FB_DURATION_ANCHOR)
+		elseif ( sound_idx == sounds.count() ) then
+			fb_text.set_caption( lang.get_text( "Feedback Long" ) );
+			fb_trial.set_duration(FB_DURATION_ANCHOR)
+		else
+			fb_text.set_caption( " " );
+			fb_trial.set_duration(FB_DURATION_OTHERS)
+		end;	
+		play_feedback_trial();
+		
+		
+		j = j + 1;
+	end;
+	
+	play_break_trial( "BREAK" );
+	practice_sounds_idx.shuffle(); #Randomise the order of sound before next round of practice.
+	
+	i = i + 1;
+end;
+

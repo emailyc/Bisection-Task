@@ -1,0 +1,42 @@
+# ------------------------------- PCL Part ------------------------------
+string BLOCK = "study";
+int caption_idx = 1;
+
+
+#SOME CONSTANTS
+int FIRST_SOUND_IDX = 1;
+int NEVER_END = 999;
+
+loop
+	int i = 1
+until
+	i >= NEVER_END #Won't end until user press space at the end of study phase.
+begin
+
+
+	loop
+		 int j = 1
+	until
+		 j > 10
+	begin
+		if ( caption_idx == FIRST_SOUND_IDX ) then
+			anchor_text.set_caption( lang.get_text( "Short anchor Caption" ) );	
+		else
+			anchor_text.set_caption( lang.get_text( "Long anchor Caption" ) );
+		end;	
+		
+		play_ITI_trial( random( 1000, 2000 ) );	
+		play_sound_trial( caption_idx, BLOCK, i, j );
+		
+		
+		caption_idx = sounds.count()/caption_idx; #Alternating between the 1st and the 7th element of the sounds array
+		j = j + 1
+	end;
+	
+	play_end_block_trial( lang.get_text( "End Study Caption" ) );
+	if response_manager.last_response() == 1 then
+		i = NEVER_END;
+	end;
+	
+	caption_idx = FIRST_SOUND_IDX;
+end;
