@@ -3,9 +3,9 @@
   <map name="default">
     <item key="Instructions">In this experiment, we are interested in how well you can judge the duration of a sound.
 
-A series of tones will be presented. Your task is to judge whether the stimulus duration is closer the SHORT  or LONG target duration. 
+A series of tones will be presented. Your task is to judge whether the stimulus duration is closer the SHORT  or LONG target duration.
 
-This experiment will start by familiarizing you with the SHORT and LONG target durations first, followed by practice session and test session. 
+This experiment will start by familiarizing you with the SHORT and LONG target durations first, followed by practice session and test session.
 
 Only practice and test session require you to make responses.
 
@@ -40,7 +40,7 @@ Press SPACE to do a short practice if you have memorised both tarhet durations.<
     <item key="Practice Caption">You will start by doing a few examples for practice.
 If you fail to get the target durations correct, you will repeat this practice.</item>
     <item key="Practice Complete Caption">You have completed the practice.
- 
+
 Click SPACE to start the actual experiment.
 
 Please try your best to stay attentative and do your best!</item>
@@ -48,9 +48,9 @@ Please try your best to stay attentative and do your best!</item>
     <item key="Completion Screen Caption">You have finished the experiment. Thank you very much for participating! Please inform the experimenter.</item>
     <item key="Block Complete Caption">In this block, you have correctly identified [BLOCK_STATS] of the target durations.
 
-You have completed [BLOCK_NUMBER] block(s). 
+You have completed [BLOCK_NUMBER] block(s).
 
-There are [TOTAL_BLOCKS] blocks in the experiment. 
+There are [TOTAL_BLOCKS] blocks in the experiment.
 
 Press SPACE to move on.</item>
     <item key="Next Screen Caption">Press SPACE to continue.</item>
