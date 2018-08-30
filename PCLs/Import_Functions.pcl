@@ -49,6 +49,7 @@ begin
 	else
 		sound_event.set_port_code ( LONG_port );
 	end;
+	sound_event.set_code_width( int(filename) ); #set the pulse_width of the corrosponding AI channel on LabView.
 	sound_trial.set_duration( int(filename) + RESPONSE_TIME ); #Duration of stimuli + 2000ms response time.
 	sound_trial.present();
 	sounds[sound_idx].get_wavefile().unload();
