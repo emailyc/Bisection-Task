@@ -20,10 +20,10 @@ begin
 	until
 		j > ROW
 	begin
-		
-		play_ITI_trial( random( 1000, 2000 ) );
+		int this_iti = random( 1000, 2000 ) ;
+		play_ITI_trial( this_iti );
 		int sound_idx = int(sequence[j][i]);		
-		play_sound_trial( sound_idx, BLOCK, i, j );
+		play_sound_trial( sound_idx, BLOCK, i, j, this_iti);
 			
 		j = j + 1;
 	end;
