@@ -24,10 +24,11 @@ begin
 	until
 		j > practice_sounds_idx.count() #the count should be 7
 	begin
-		play_ITI_trial( ONE_SEC );
+		int this_iti = ONE_SEC ;
+		play_ITI_trial( this_iti );
 		
 		int sound_idx = practice_sounds_idx[j];
-		play_sound_trial( sound_idx, BLOCK, i, j );
+		play_sound_trial( sound_idx, BLOCK, i, j, this_iti );
 		
 
 		if ( sound_idx == FIRST_SOUND_IDX ) then #if shortest or longest sound
