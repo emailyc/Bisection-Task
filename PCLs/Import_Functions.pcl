@@ -7,6 +7,14 @@ sub
 begin
 	instruct_text.set_caption( instruction_text ); 
 	instruct_text.load();
+	instruct_event.set_event_code( 
+		"Stim;" +
+		logfile.subject() + ";" +
+		"Instruction" + ";" +
+		"Instruction" + ";" +
+		"Instruction" + ";" +
+		"Instruction" 
+	);
 	instruct_trial.present(); 
 	instruct_text.unload();
 end;	
@@ -78,7 +86,7 @@ sub
    play_ITI_trial( int time )
 begin
 	int this_iti = time;
-	ITI_trial.set_duration( this_iti );	#A random number of seconds[1, 2]
+	ITI_trial.set_duration( this_iti );	
 	ITI_trial.present();
 end;
 

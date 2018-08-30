@@ -29,7 +29,7 @@ begin
 	end;
 	
 	play_break_trial( "BREAK" );
-	play_ITI_trial( ONE_SEC ); #Just a 2 second buffer so the next block don't jump on you.
+	play_ITI_trial( 2000 ); #Just a 2 second buffer so the next block don't jump on you.
 	
 	i = i + 1;
 end;
