@@ -21,8 +21,8 @@ stimulus_properties =
 	block_name, string,
 	block_number, number,
 	trial_number, number,	
-	probe, number;
-
+	probe, number,
+	ITI, number;
 
 # ------------------------------- SDL Part ------------------------------
 begin;
