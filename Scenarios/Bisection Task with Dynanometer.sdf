@@ -1,7 +1,7 @@
 # Bisection
 
-event_pair_table my_rm_table( subject_id1, block_name1, block_number1, trial_number1, probe1 )
+event_pair_table my_rm_table( subject_id1, block_name1, block_number1, trial_number1, probe1, ITI1 )
 good_pairs(rm_all) :: event_cond1 == "Stim"
 
-print "Subject Id\tBlock Type\tBlock Number\tTrial Number\tProbe Condition"
+print "Subject Id\tBlock Type\tBlock Number\tTrial Number\tProbe Condition\tInter-Trial Interval"
 print my_rm_table( good_pairs, "\t", "\n", no_header_row )
