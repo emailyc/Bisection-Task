@@ -7,14 +7,6 @@ sub
 begin
 	instruct_text.set_caption( instruction_text ); 
 	instruct_text.load();
-	# instruct_event.set_event_code( 
-	#	"Stim;" +
-	#	logfile.subject() + ";" +
-	#	"Instruction" + ";" +
-	#	"Instruction" + ";" +
-	#	"Instruction" + ";" +
-	#	"Instruction" 
-	# );
 	instruct_trial.present(); 
 	instruct_text.unload();
 end;	
@@ -33,11 +25,7 @@ begin
 	string filename = sounds[sound_idx].get_wavefile().filename();
 	filename = filename.replace( stimulus_directory, "" ); #remove path
 	filename = filename.replace( ".wav", "" );#remove extension name
-	
-	
-	
-	#sound_event.set_event_code( block + "_" + filename );
-	
+		
 	# Update event code & store data
 	sound_event.set_event_code( 
 		"Stim;" +
@@ -86,7 +74,6 @@ end;
 sub
    play_ITI_trial( int time )
 begin
-	# int this_iti = time;
 	ITI_trial.set_duration( time );	
 	ITI_trial.present();
 end;

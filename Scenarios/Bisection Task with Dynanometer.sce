@@ -11,8 +11,7 @@ response_matching = simple_matching;
 event_code_delimiter = ";";
 no_logfile = false;
 response_logging = log_active;
-#write_codes = true;
-pulse_width = 6;
+write_codes = true;
 response_port_output = false;
 
 stimulus_properties =
@@ -50,15 +49,19 @@ trial {
 	trial_type = specific_response;
 	terminator_button = 1; # only SPACE
 	
-	picture { 
-		text { 
-			caption = " "; 
-			preload = false;
-			font_size = 4.5;
-		} instruct_text; 
-		x = 0; 
-		y = 0;
-	};
+	stimulus_event{
+		picture { 
+			text { 
+				caption = " "; 
+				preload = false;
+				font_size = 4.5;
+			} instruct_text; 
+			x = 0; 
+			y = 0;
+		};
+		port_code = 3;
+		code = "Instruction";
+	} instruct_event;
 } instruct_trial; # for practice instr and test instr, manually replace caption
 
 trial {
