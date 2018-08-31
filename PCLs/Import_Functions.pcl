@@ -7,21 +7,21 @@ sub
 begin
 	instruct_text.set_caption( instruction_text ); 
 	instruct_text.load();
-	instruct_event.set_event_code( 
-		"Stim;" +
-		logfile.subject() + ";" +
-		"Instruction" + ";" +
-		"Instruction" + ";" +
-		"Instruction" + ";" +
-		"Instruction" 
-	);
+	# instruct_event.set_event_code( 
+	#	"Stim;" +
+	#	logfile.subject() + ";" +
+	#	"Instruction" + ";" +
+	#	"Instruction" + ";" +
+	#	"Instruction" + ";" +
+	#	"Instruction" 
+	# );
 	instruct_trial.present(); 
 	instruct_text.unload();
 end;	
 
 	
 sub
-    play_sound_trial( int sound_idx, string block, int block_number, int trial_number )
+    play_sound_trial( int sound_idx, string block, int block_number, int trial_number, int this_iti )
 begin
 	
 	#SOME CONSTANTS
@@ -45,7 +45,8 @@ begin
 		block + ";" +
 		string( block_number ) + ";" +
 		string( trial_number ) + ";" +
-		string( sound_idx ) 
+		string( sound_idx )  + ";" +
+		string( this_iti)
 	);		
 		
 	
@@ -85,8 +86,8 @@ end;
 sub
    play_ITI_trial( int time )
 begin
-	int this_iti = time;
-	ITI_trial.set_duration( this_iti );	
+	# int this_iti = time;
+	ITI_trial.set_duration( time );	
 	ITI_trial.present();
 end;
 
