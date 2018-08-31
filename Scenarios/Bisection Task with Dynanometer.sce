@@ -11,7 +11,7 @@ response_matching = simple_matching;
 event_code_delimiter = ";";
 no_logfile = false;
 response_logging = log_active;
-#write_codes = true;
+write_codes = true;
 pulse_width = 6;
 response_port_output = false;
 
@@ -49,7 +49,7 @@ trial {
 	trial_duration = forever;
 	trial_type = specific_response;
 	terminator_button = 1; # only SPACE
-	
+	port_code = 3;
 	picture { 
 		text { 
 			caption = " "; 
@@ -86,6 +86,7 @@ trial {
 			x = 0;
 			y = 0;
 		} label_anchors;
+		port_code = 1;
 	} sound_label_event;
 } sound_trial; 
 
