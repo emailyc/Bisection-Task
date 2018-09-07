@@ -14,11 +14,11 @@ int FB_DURATION_OTHERS = 100;
 double accuracy_threshold = 0.800000000;
 
 #Count of trials elapsed
-int p_elapsed = 0;
+double p_elapsed = 0.00;
 #Count of correct responds;
-int p_correct = 0;
+double p_correct = 0.00;
 #Accuracy
-int p_accuracy = 0;
+double p_accuracy = 0.00;
 
 #Count of practice block ran
 int practice_round = 1; #haven't figured out what to do with this variable yet.
@@ -92,20 +92,18 @@ begin
 	end;
 	
 	#Calculate accuracy
-	p_accuracy = p_correct / p_elapsed;
+	p_accuracy = round(p_correct / p_elapsed, 3);
 	term.print("Accuracy: " + string(p_accuracy) + "\n");
 	
 	#Practice End/Repeat Caption
 	if p_accuracy >= accuracy_threshold then
-		instruct_text.set_caption( lang.get_text( "Practice Complete Caption" ) );
+		play_instruct_trial( lang.get_text( "Practice Complete Caption" ) );
 	else	
-		instruct_text.set_caption( lang.get_text( "Practice Repeat Caption" ) );
+		play_instruct_trial( lang.get_text( "Practice Fail Caption" ) );
 		p_accuracy = 0;
 		practice_round = practice_round + 1; 
 	end;
-		
-	play_instruct_trial();	
-	
+			
 	play_break_trial( "BREAK" );
 end;
 
