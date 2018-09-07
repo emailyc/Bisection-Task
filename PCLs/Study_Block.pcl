@@ -4,18 +4,18 @@ int caption_idx = 1;
 
 
 #SOME CONSTANTS
-int FIRST_SOUND_IDX = 1;
+int FIRST_SOUND_IDX = 10;
 bool NEVER_END = true;
 
 loop
 	int i = 1
 until
-	NEVER_END == false#i >= NEVER_END #Won't end until user press space at the end of study phase.
+	NEVER_END == false
 begin
 
 
 	loop
-		 int j = 1
+		 int j = 10
 	until
 		 j > 1
 	begin

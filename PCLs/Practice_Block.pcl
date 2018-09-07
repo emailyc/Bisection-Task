@@ -11,7 +11,7 @@ practice_sounds_idx.shuffle(); #Randomise the content order
 #SOME CONSTANTS
 int FB_DURATION_ANCHOR = 700;
 int FB_DURATION_OTHERS = 100;
-double accuracy_threshold = 0.800000000;
+double accuracy_threshold = 0.80000000;
 
 #Count of trials elapsed
 double p_elapsed = 0.00;
@@ -58,14 +58,11 @@ begin
 			
 			#Update correct count and change feedback caption
 			if parti_response == 0 then #No response
-				term.print("Too slow!!!\n");
 				fb_text.set_caption( lang.get_text( "Feedback slow Caption" ) );
 			elseif parti_response == answer then
 				p_correct = p_correct + 1;
-				term.print("Correct Response!!!\n");
 				fb_text.set_caption( lang.get_text( "Feedback correct Caption" ) );
 			else 	
-				term.print("Incorrect Response!!!\n");
 				fb_text.set_caption( lang.get_text( "Feedback wrong Caption" ) );
 			end;
 				
@@ -93,7 +90,6 @@ begin
 	
 	#Calculate accuracy
 	p_accuracy = round(p_correct / p_elapsed, 3);
-	term.print("Accuracy: " + string(p_accuracy) + "\n");
 	
 	#Practice End/Repeat Caption
 	if p_accuracy >= accuracy_threshold then

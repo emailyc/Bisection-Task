@@ -44,28 +44,21 @@ begin
 		t_elapsed = t_elapsed + 1;
 		
 		#Update correct count
-		if parti_response == 0 then #No response
-			term.print("Too slow!!!\n");
-		elseif parti_response == answer then
+		if parti_response == answer then
 			t_correct = t_correct + 1;
-			term.print("Correct Response!!!\n");
-		else 	
-			term.print("Incorrect Response!!!\n");
 		end;
-		
 			
 		j = j + 1;
 	end;
 	
 	#Calculate accuracy
 	t_accuracy = round(t_correct / t_elapsed, 3);
-	term.print("Accuracy: " + string(t_accuracy) + "\n");
 	
 	if i < COLLUMN then
 		string block_comp = lang.get_text( "Block Complete Caption" );
-		block_comp.replace("[BLOCK_STATS]", string(t_accuracy));
-		block_comp.replace("[BLOCK_NUMBER]", string(i) );
-		block_comp.replace("[TOTAL_BLOCKS]", string(COLLUMN) );
+		block_comp = block_comp.replace("[BLOCK_STATS]", string(t_accuracy));
+		block_comp = block_comp.replace("[BLOCK_NUMBER]", string(i) );
+		block_comp = block_comp.replace("[TOTAL_BLOCKS]", string(COLLUMN) );
 		play_instruct_trial( block_comp );
 		play_break_trial( "BREAK" );
 		play_ITI_trial( TWO_SEC ); #Just a 2 second buffer so the next block don't jump on you.
