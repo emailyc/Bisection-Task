@@ -2,6 +2,16 @@
 
 #  Functions 
 
+sub int read_response
+begin
+	if port.total_count() > 0 then
+		int resp = port.codes(1);
+		port.clear();
+		return resp;
+	end;
+	return 0;
+end;	
+
 sub 
 	play_instruct_trial( string instruction_text )
 begin
@@ -15,12 +25,7 @@ end;
 sub
     play_sound_trial( int sound_idx, string block, int block_number, int trial_number, int this_iti )
 begin
-	
-	#SOME CONSTANTS
-	int MIDDLE_IDX = 4;
-	int RESPONSE_TIME = 2000;
 
-	
 	anchor_text.load();
 	string filename = sounds[sound_idx].get_wavefile().filename();
 	filename = filename.replace( stimulus_directory, "" ); #remove path
@@ -37,8 +42,6 @@ begin
 		string( this_iti)
 	);		
 		
-	
-	
 	sounds[sound_idx].get_wavefile().load();
 	sound_event.set_stimulus( sounds[sound_idx] );
 	if ( sound_idx <= MIDDLE_IDX ) then #In this case the 4th sound is closer to the short anchor than the 5th sound.  
@@ -47,11 +50,11 @@ begin
 		sound_event.set_port_code ( LONG_port );
 	end;
 	sound_event.set_code_width( int(filename) ); #set the pulse_width of the corrosponding AI channel on LabView.
-	sound_trial.set_duration( int(filename) + RESPONSE_TIME ); #Duration of stimuli + 2000ms response time.
+	sound_trial.set_duration( int(filename) + TWO_SEC ); #Duration of stimuli + 2000ms response time.
+	port.clear(); #Clear all record of dynamometer input incase participant squeezed after previoud trial and before thsi trial starts.
 	sound_trial.present();
 	sounds[sound_idx].get_wavefile().unload();
 	anchor_text.unload();
-	
 end;
 
 sub
@@ -110,3 +113,4 @@ begin
 	
 	return trial_seq; #2-d string array 
 end;
+

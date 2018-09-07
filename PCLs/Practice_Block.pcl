@@ -5,51 +5,107 @@ BLOCK = "practice";
 #Make integer array to host order of stimuli
 array<int> practice_sounds_idx[sounds.count()];
 practice_sounds_idx.fill( 1, sounds.count(), 1, 1 ); #An array of integer from 1 to the number of durations.
-practice_sounds_idx.shuffle(); #Randomise the order of 
+practice_sounds_idx.shuffle(); #Randomise the content order
 
 
 #SOME CONSTANTS
 int FB_DURATION_ANCHOR = 700;
 int FB_DURATION_OTHERS = 100;
+double accuracy_threshold = 0.800000000;
 
+#Count of trials elapsed
+int p_elapsed = 0;
+#Count of correct responds;
+int p_correct = 0;
+#Accuracy
+int p_accuracy = 0;
 
-loop
-    int i = 1
-until
-    i > 3 #loop the 7 different durations 3 times.
+#Count of practice block ran
+int practice_round = 1; #haven't figured out what to do with this variable yet.
+
+loop until p_accuracy >= accuracy_threshold
 begin
-		
-	loop
-		int j = 1
-	until
-		j > practice_sounds_idx.count() #the count should be 7
-	begin
-		int this_iti = ONE_SEC ;
-		play_ITI_trial( this_iti );
-		
-		int sound_idx = practice_sounds_idx[j];
-		play_sound_trial( sound_idx, BLOCK, i, j, this_iti );
-		
 
-		if ( sound_idx == FIRST_SOUND_IDX ) then #if shortest or longest sound
-			fb_text.set_caption( lang.get_text( "Feedback Short" ) );
-			fb_trial.set_duration(FB_DURATION_ANCHOR)
-		elseif ( sound_idx == sounds.count() ) then
-			fb_text.set_caption( lang.get_text( "Feedback Long" ) );
-			fb_trial.set_duration(FB_DURATION_ANCHOR)
-		else
-			fb_text.set_caption( " " );
-			fb_trial.set_duration(FB_DURATION_OTHERS)
-		end;	
-		play_feedback_trial();
+	loop
+		 int i = 1
+	until
+		 i > 3 #loop the 7 different durations 3 times.
+	begin
+			
+		loop
+			int j = 1
+		until
+			j > practice_sounds_idx.count() #the count should be 7
+		begin
+			int this_iti = ONE_SEC ;
+			play_ITI_trial( this_iti );
+			
+			int sound_idx = practice_sounds_idx[j];	
+			
+			#Determine the correct answer for this trial
+			int answer;
+			if sound_idx <= MIDDLE_IDX then
+				answer = SHORT_port;
+			elseif sound_idx > MIDDLE_IDX then
+				answer = LONG_port;
+			end;
+	
+			play_sound_trial( sound_idx, BLOCK, i, j, this_iti );
+			
+			int parti_response = read_response(); #Shuld be either 1, 2 (Channel 1 / Channel 2) or 0 (no response)
+			term.print("Last port num: " + string( parti_response ) + "\n");
+			p_elapsed = p_elapsed + 1;
+			
+			#Update correct count and change feedback caption
+			if parti_response == 0 then #No response
+				term.print("Too slow!!!\n");
+				fb_text.set_caption( lang.get_text( "Feedback slow Caption" ) );
+			elseif parti_response == answer then
+				p_correct = p_correct + 1;
+				term.print("Correct Response!!!\n");
+				fb_text.set_caption( lang.get_text( "Feedback correct Caption" ) );
+			else 	
+				term.print("Incorrect Response!!!\n");
+				fb_text.set_caption( lang.get_text( "Feedback wrong Caption" ) );
+			end;
+				
+			#Display Long/Short/Empty caption
+			#if ( sound_idx == FIRST_SOUND_IDX ) then #if shortest or longest sound
+			#	fb_text.set_caption( lang.get_text( "Feedback Short" ) );
+			#	fb_trial.set_duration(FB_DURATION_ANCHOR)
+			#elseif ( sound_idx == sounds.count() ) then
+			#	fb_text.set_caption( lang.get_text( "Feedback Long" ) );
+			#	fb_trial.set_duration(FB_DURATION_ANCHOR)
+			#else
+			#	fb_text.set_caption( " " );
+			#	fb_trial.set_duration(FB_DURATION_OTHERS)
+			#end;	
+			play_feedback_trial();
+			
+			
+			j = j + 1;
+		end;
 		
+		practice_sounds_idx.shuffle(); #Randomise the order of sound before next round of practice.
 		
-		j = j + 1;
+		i = i + 1;
 	end;
 	
-	play_break_trial( "BREAK" );
-	practice_sounds_idx.shuffle(); #Randomise the order of sound before next round of practice.
+	#Calculate accuracy
+	p_accuracy = p_correct / p_elapsed;
+	term.print("Accuracy: " + string(p_accuracy) + "\n");
 	
-	i = i + 1;
+	#Practice End/Repeat Caption
+	if p_accuracy >= accuracy_threshold then
+		instruct_text.set_caption( lang.get_text( "Practice Complete Caption" ) );
+	else	
+		instruct_text.set_caption( lang.get_text( "Practice Repeat Caption" ) );
+		p_accuracy = 0;
+		practice_round = practice_round + 1; 
+	end;
+		
+	play_instruct_trial();	
+	
+	play_break_trial( "BREAK" );
 end;
 

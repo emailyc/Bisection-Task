@@ -2,6 +2,9 @@
 
 #Get participant number
 
+int SHORT_port;
+int LONG_port;
+string Dynanometer_Position;
 int parti_num_int = int( logfile.subject() );
 
 #Determine which port code to represent Short and Long

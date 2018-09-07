@@ -119,6 +119,7 @@ trial {
 } end_block_trial;
 
 trial {	
+	trial_duration = 700;
 	stimulus_event {
 		picture { 
 			text { 
@@ -168,27 +169,31 @@ picture {
 # ----------------------------- PCL Program -----------------------------
 begin_pcl;
 
-#CONSTANTS
-int SHORT_port;
-int LONG_port;
-string Dynanometer_Position;
+if (input_port_manager.port_count() < 1) then
+   exit( "Something wrong with Dynomometer or SensorDAQ, Presentation cannot detect port device." )
+end;
+input_port port = input_port_manager.get_port( 1 );
+
+#Constant Integers
+int MIDDLE_IDX = 4; #First 4 stimulus are short, the rest are long
 int ONE_SEC = 1000;
+int TWO_SEC = 2000;
 
-# ----------------------------- Functions -----------------------------
-
-include_once "..\\PCLs\\Import_Functions.pcl";
 
 # ----------------------------- Participant Number -----------------------------
 
 include_once "..\\PCLs\\Participant Number.pcl";
 
+
+# ----------------------------- Functions -----------------------------
+
+include_once "..\\PCLs\\Import_Functions.pcl";
+
 # ----------------------------- Import Message File -----------------------------
 language_file lang = new language_file;
 lang.load( stimulus_directory + "English.xml" );
 
-
 # ----------------------------- Study Block -----------------------------
-
 play_instruct_trial( lang.get_text( "Instructions" ) );
 include_once "..\\PCLs\\Study_Block.pcl";
 anchor_text.set_caption( "" ); #reset caption since in practice phase we don't show caption along with stimuli

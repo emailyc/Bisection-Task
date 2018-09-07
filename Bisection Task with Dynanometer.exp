@@ -1,5 +1,5 @@
 <ver>20.1</ver>
-<efn>C:\Users\psyuser\Desktop\Bisection Task with Dynanometer\Bisection Task with Dynanometer.exp</efn>
+<efn>C:\Users\psyuser\Desktop\Bisection-Task\Bisection Task with Dynanometer.exp</efn>
 <author>Chung</author>
 <con>
 <pause>P</pause>
@@ -40,10 +40,10 @@
 <lfn></lfn>
 </docs>
 <dp_list></dp_list>
-<dsd>C:\Users\psyuser\Desktop\Bisection Task with Dynanometer\Stimuli</dsd>
+<dsd>C:\Users\psyuser\Desktop\Bisection-Task\Stimuli</dsd>
 <dxv>8</dxv>
 <efs>
-<filename>C:\Users\psyuser\Desktop\Bisection Task with Dynanometer\Scenarios\Bisection Task with Dynanometer.sce</filename>
+<filename>C:\Users\psyuser\Desktop\Bisection-Task\Scenarios\Bisection Task with Dynanometer.sce</filename>
 </efs>
 <exclusive_mouse>1</exclusive_mouse>
 <exp_version></exp_version>
@@ -117,8 +117,25 @@
 <idc>0</idc>
 <idt>0</idt>
 <ilc>0</ilc>
-<ip_chans></ip_chans>
-<lfd>C:\Users\psyuser\Desktop\Bisection Task with Dynanometer\Logs</lfd>
+<ip_chans>
+<chan>
+<dsdi>1</dsdi>
+<dsi>1</dsi>
+<dsn>Status port</dsn>
+<dst>0</dst>
+<il>1</il>
+<iv>0</iv>
+<ivm>0</ivm>
+<mask></mask>
+<name>input1</name>
+<piai>LPT1</piai>
+<pian>Parallel Port</pian>
+<pihpn>LPT1</pihpn>
+<pindex>2</pindex>
+<ui>0</ui>
+</chan>
+</ip_chans>
+<lfd>C:\Users\psyuser\Desktop\Bisection-Task\Logs</lfd>
 <lnb>2</lnb>
 <lno>3</lno>
 <log>
@@ -170,7 +187,12 @@
 </p>
 </oports>
 <out_encrypt_key></out_encrypt_key>
-<pi_list></pi_list>
+<pi_list>
+<ip>
+<cn>input1</cn>
+<lc>1</lc>
+</ip>
+</pi_list>
 <plat>1</plat>
 <port_devices>
 <device>
@@ -257,6 +279,21 @@
 <name>Keyboard</name>
 </device>
 <device>
+<device_type>3</device_type>
+<dx_device_type>0</dx_device_type>
+<name>HID Keyboard Device</name>
+</device>
+<device>
+<device_type>3</device_type>
+<dx_device_type>0</dx_device_type>
+<name>HID Keyboard Device 1</name>
+</device>
+<device>
+<device_type>3</device_type>
+<dx_device_type>0</dx_device_type>
+<name>HID Keyboard Device 2</name>
+</device>
+<device>
 <abs_axis>
 <dead_zone>0</dead_zone>
 <max>1000</max>
@@ -297,21 +334,6 @@
 <max_raw_pos>65535</max_raw_pos>
 <min_raw_pos>0</min_raw_pos>
 <name>HID-compliant mouse</name>
-</device>
-<device>
-<device_type>3</device_type>
-<dx_device_type>0</dx_device_type>
-<name>HID Keyboard Device</name>
-</device>
-<device>
-<device_type>3</device_type>
-<dx_device_type>0</dx_device_type>
-<name>HID Keyboard Device 1</name>
-</device>
-<device>
-<device_type>3</device_type>
-<dx_device_type>0</dx_device_type>
-<name>HID Keyboard Device 2</name>
 </device>
 <device>
 <abs_axis>
@@ -505,7 +527,7 @@
 <offset>19</offset>
 </idv>
 <overrides></overrides>
-<sfn>C:\Users\psyuser\Desktop\Bisection Task with Dynanometer\Scenarios\Bisection Task with Dynanometer.sce</sfn>
+<sfn>C:\Users\psyuser\Desktop\Bisection-Task\Scenarios\Bisection Task with Dynanometer.sce</sfn>
 </sce>
 <sct>
 <capture_device>
@@ -553,7 +575,7 @@
 <sdv>Primary Sound Driver</sdv>
 <show_dis>0</show_dis>
 <show_parm>0</show_parm>
-<show_term>0</show_term>
+<show_term>1</show_term>
 <smc>2</smc>
 <smd>16</smd>
 <smr>44100</smr>

@@ -7,6 +7,11 @@ BLOCK = "test";
 int ROW = 49;
 int COLLUMN = 4;
 
+#Count of trials elapsed
+int t_elapsed = 0;
+#Count of correct responds;
+int t_correct = 0;
+
 array<string> sequence[ROW][COLLUMN] = read_sequence_file( logfile.subject() ); #the function returns a 2-D string array.
 
 loop
@@ -20,16 +25,44 @@ begin
 	until
 		j > ROW
 	begin
-		int this_iti = random( 1000, 2000 ) ;
+		int this_iti = random( ONE_SEC, TWO_SEC ) ;
 		play_ITI_trial( this_iti );
-		int sound_idx = int(sequence[j][i]);		
+		int sound_idx = int(sequence[j][i]);	
+
+		#Determine the correct answer for this trial
+		int answer;
+		if sound_idx <= MIDDLE_IDX then
+			answer = SHORT_port;
+		elseif sound_idx > MIDDLE_IDX then
+			answer = LONG_port;
+		end;
+	
 		play_sound_trial( sound_idx, BLOCK, i, j, this_iti);
+		
+		int parti_response = read_response(); #Shuld be either 1, 2 (Channel 1 / Channel 2) or 0 (no response)
+		term.print("Last port num: " + string( parti_response ) + "\n");
+		t_elapsed = t_elapsed + 1;
+		
+		#Update correct count
+		if parti_response == 0 then #No response
+			term.print("Too slow!!!\n");
+		elseif parti_response == answer then
+			t_correct = t_correct + 1;
+			term.print("Correct Response!!!\n");
+		else 	
+			term.print("Incorrect Response!!!\n");
+		end;
+		
 			
 		j = j + 1;
 	end;
 	
-	play_break_trial( "BREAK" );
-	play_ITI_trial( 2000 ); #Just a 2 second buffer so the next block don't jump on you.
+	if i < COLLUMN then
+		instruct_text.set_caption( lang.get_text( "Block Complete Caption" ) ); #Not sure how to update number of completed block and block done in "Block Complete Caption".
+		play_instruct_trial();
+		play_break_trial( "BREAK" );
+		play_ITI_trial( TWO_SEC ); #Just a 2 second buffer so the next block don't jump on you.
+	end;	
 	
 	i = i + 1;
 end;

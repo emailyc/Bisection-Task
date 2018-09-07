@@ -5,19 +5,19 @@ int caption_idx = 1;
 
 #SOME CONSTANTS
 int FIRST_SOUND_IDX = 1;
-int NEVER_END = 999;
+bool NEVER_END = true;
 
 loop
 	int i = 1
 until
-	i >= NEVER_END #Won't end until user press space at the end of study phase.
+	NEVER_END == false#i >= NEVER_END #Won't end until user press space at the end of study phase.
 begin
 
 
 	loop
 		 int j = 1
 	until
-		 j > 10
+		 j > 1
 	begin
 		if ( caption_idx == FIRST_SOUND_IDX ) then
 			anchor_text.set_caption( lang.get_text( "Short anchor Caption" ) );	
@@ -25,7 +25,7 @@ begin
 			anchor_text.set_caption( lang.get_text( "Long anchor Caption" ) );
 		end;	
 		
-		int this_iti = random( 1000, 2000 ) ;
+		int this_iti = random( ONE_SEC, TWO_SEC ) ;
 		play_ITI_trial( this_iti );	
 		play_sound_trial( caption_idx, BLOCK, i, j, this_iti);
 		
@@ -36,8 +36,9 @@ begin
 	
 	play_end_block_trial( lang.get_text( "End Study Caption" ) );
 	if response_manager.last_response() == 1 then
-		i = NEVER_END;
+		break;	
 	end;
 	
-	caption_idx = FIRST_SOUND_IDX;
+	i = i + 1;
+	caption_idx = FIRST_SOUND_IDX; #reset caption_idx to 1
 end;
