@@ -49,8 +49,12 @@ begin
 			elseif sound_idx > MIDDLE_IDX then
 				answer = LONG_port;
 			end;
+			term.print( “Practice trial ” +  string(trial_no) + " correct answer: " + string( answer) + "\n");
 	
-			play_sound_trial( sound_idx, BLOCK, i, j, this_iti );
+			# play_sound_trial( sound_idx, BLOCK, i, j, this_iti );
+			int trial_no = (i-1)* sounds.count() + j
+			play_sound_trial( sound_idx, BLOCK, practice_round, trial_no, this_iti );
+
 			
 			int parti_response = read_response(); #Shuld be either 1, 2 (Channel 1 / Channel 2) or 0 (no response)
 			term.print("Last port num: " + string( parti_response ) + "\n");
