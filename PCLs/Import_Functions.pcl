@@ -30,16 +30,16 @@ begin
 	filename = filename.replace( stimulus_directory, "" ); #remove path
 	filename = filename.replace( ".wav", "" );#remove extension name
 		
-	# Update event code & store data
-	sound_event.set_event_code( 
-		"Stim;" +
-		logfile.subject() + ";" +
-		block + ";" +
-		string( block_number ) + ";" +
-		string( trial_number ) + ";" +
-		string( sound_idx )  + ";" +
-		string( this_iti)
-	);		
+	# Update event code & store data [deleted]
+	# sound_event.set_event_code( 
+	#	"Stim;" +
+	#	logfile.subject() + ";" +
+	#	block + ";" +
+	#	string( block_number ) + ";" +
+	#	string( trial_number ) + ";" +
+	#	string( sound_idx )  + ";" +
+	#	string( this_iti)
+	#);		
 		
 	sounds[sound_idx].get_wavefile().load();
 	sound_event.set_stimulus( sounds[sound_idx] );
