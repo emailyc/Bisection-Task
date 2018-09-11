@@ -26,8 +26,22 @@ begin
 		
 		int this_iti = random( ONE_SEC, TWO_SEC ) ;
 		play_ITI_trial( this_iti );	
-		play_sound_trial( caption_idx, BLOCK, i, j, this_iti);
+		play_sound_trial( caption_idx, BLOCK, i, j);
 		
+		#  Update event code & store data
+		info_event.set_event_code( 
+			"Stim;" +
+			logfile.subject() + ";" +
+			BLOCK + ";" +
+			string( i ) + ";" +
+			string( j ) + ";" +
+			string( caption_idx )  + ";" +
+			string( this_iti)  + ";" +
+			"NA;" +
+			"NA;" +
+			"NA;"
+		);	
+		info_trial.present();
 		
 		caption_idx = sounds.count()/caption_idx; #Alternating between the 1st and the 7th element of the sounds array
 		j = j + 1
