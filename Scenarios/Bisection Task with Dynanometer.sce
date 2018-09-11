@@ -21,7 +21,10 @@ stimulus_properties =
 	block_number, number,
 	trial_number, number,	
 	probe, number,
-	ITI, number;
+	ITI, number,
+	correctAns, number,
+	resp, number,
+	accuracy, number;
 
 # ------------------------------- SDL Part ------------------------------
 begin;
@@ -165,6 +168,13 @@ picture {
    text { caption = " "; font_size = 2;} parti_num_text;
    x = 0; y = -20;
 } parti_num;
+
+# add empty trial to store information
+trial {
+    stimulus_event {
+        nothing {};
+    } info_event;
+} info_trial;
 
 # ----------------------------- PCL Program -----------------------------
 begin_pcl;
