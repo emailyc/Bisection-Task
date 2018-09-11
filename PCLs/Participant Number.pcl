@@ -11,9 +11,8 @@ int parti_num_int = int( logfile.subject() );
 if mod( parti_num_int, 2 ) == 1 then #odd	
 	SHORT_port = 1;
 	LONG_port = 2;
-	Dynanometer_Position = "Response Prompt Caption LONG RIGHT SHORT LEFT";
 elseif mod( parti_num_int, 2 ) == 0 then #even
 	SHORT_port = 2;
 	LONG_port = 1;
-	Dynanometer_Position = "Response Prompt Caption SHORT RIGHT LONG LEFT";
 end;	
+

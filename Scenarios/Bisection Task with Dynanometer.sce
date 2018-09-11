@@ -202,7 +202,7 @@ play_ITI_trial( ONE_SEC ); #Just a short blank screen between blocks
 
 # ----------------------------- PRACTICE Block -----------------------------
 
-play_instruct_trial( lang.get_text( Dynanometer_Position ) );
+play_instruct_trial( lang.get_text( "Response Prompt Caption" ) );
 include_once "..\\PCLs\\Practice_Block.pcl";
 play_break_trial( "BREAK" );
 play_instruct_trial( lang.get_text("Practice Complete Caption" ) );

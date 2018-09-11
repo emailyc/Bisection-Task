@@ -54,15 +54,15 @@ begin
 	#Calculate accuracy
 	t_accuracy = round(t_correct / t_elapsed, 3);
 	
-	if i < COLLUMN then
-		string block_comp = lang.get_text( "Block Complete Caption" );
-		block_comp = block_comp.replace("[BLOCK_STATS]", string(t_accuracy));
-		block_comp = block_comp.replace("[BLOCK_NUMBER]", string(i) );
-		block_comp = block_comp.replace("[TOTAL_BLOCKS]", string(COLLUMN) );
-		play_instruct_trial( block_comp );
-		play_break_trial( "BREAK" );
-		play_ITI_trial( TWO_SEC ); #Just a 2 second buffer so the next block don't jump on you.
-	end;	
+	
+	string block_comp = lang.get_text( "Block Complete Caption" );
+	block_comp = block_comp.replace("[BLOCK_STATS]", string(t_accuracy));
+	block_comp = block_comp.replace("[BLOCK_NUMBER]", string(i) );
+	block_comp = block_comp.replace("[TOTAL_BLOCKS]", string(COLLUMN) );
+	play_instruct_trial( block_comp );
+	play_break_trial( "BREAK" );
+	play_ITI_trial( TWO_SEC ); #Just a 2 second buffer so the next block don't jump on you.
+		
 	
 	i = i + 1;
 end;

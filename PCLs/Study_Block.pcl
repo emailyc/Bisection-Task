@@ -2,9 +2,8 @@
 string BLOCK = "study";
 int caption_idx = 1;
 
-
 #SOME CONSTANTS
-int FIRST_SOUND_IDX = 10;
+int FIRST_SOUND_IDX = 1;
 bool NEVER_END = true;
 
 loop
@@ -15,9 +14,9 @@ begin
 
 
 	loop
-		 int j = 10
+		 int j = 1
 	until
-		 j > 1
+		 j > 10
 	begin
 		if ( caption_idx == FIRST_SOUND_IDX ) then
 			anchor_text.set_caption( lang.get_text( "Short anchor Caption" ) );	

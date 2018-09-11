@@ -66,17 +66,6 @@ begin
 				fb_text.set_caption( lang.get_text( "Feedback wrong Caption" ) );
 			end;
 				
-			#Display Long/Short/Empty caption
-			#if ( sound_idx == FIRST_SOUND_IDX ) then #if shortest or longest sound
-			#	fb_text.set_caption( lang.get_text( "Feedback Short" ) );
-			#	fb_trial.set_duration(FB_DURATION_ANCHOR)
-			#elseif ( sound_idx == sounds.count() ) then
-			#	fb_text.set_caption( lang.get_text( "Feedback Long" ) );
-			#	fb_trial.set_duration(FB_DURATION_ANCHOR)
-			#else
-			#	fb_text.set_caption( " " );
-			#	fb_trial.set_duration(FB_DURATION_OTHERS)
-			#end;	
 			play_feedback_trial();
 			
 			
@@ -100,6 +89,5 @@ begin
 		practice_round = practice_round + 1; 
 	end;
 			
-	play_break_trial( "BREAK" );
 end;
 

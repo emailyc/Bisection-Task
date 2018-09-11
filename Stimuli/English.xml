@@ -14,9 +14,9 @@ Please refrain from counting or foot-tapping. It is very important to remember d
 Press SPACE to begin the study session when you are ready.</item>
     <item key="Long anchor Caption">This is the LONG target duration.</item>
     <item key="Short anchor Caption">This is the SHORT target duration.</item>
-    <item key="Response Prompt Caption SHORT RIGHT LONG LEFT">Squeeze [LEFT] handle if you think the duration of this tone is closer to the LONG target duration.
+    <item key="Response Prompt Caption">Squeeze LONG handle if you think the duration of this tone is closer to the LONG target duration.
 
-Squeeze [RIGHT] handle if it is closer to the SHORT target duration.
+Squeeze SHORT handle if it is closer to the SHORT target duration.
 
 Press SPACE to begin practice session when you are ready.</item>
 <item key="Response Prompt Caption LONG RIGHT SHORT LEFT">Squeeze [RIGHT] handle if you think the duration of this tone is closer to the LONG target duration.
