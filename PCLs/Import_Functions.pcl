@@ -23,7 +23,7 @@ end;
 
 	
 sub
-    play_sound_trial( int sound_idx, string block, int block_number, int trial_number, int this_iti )
+    play_sound_trial( int sound_idx, string block, int block_number, int trial_number)
 begin
 	anchor_text.load();
 	string filename = sounds[sound_idx].get_wavefile().filename();
