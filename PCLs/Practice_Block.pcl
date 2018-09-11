@@ -19,6 +19,9 @@ double p_elapsed = 0.00;
 double p_correct = 0.00;
 #Accuracy
 double p_accuracy = 0.00;
+# new
+double p_target = 0.00;
+int trial_no = 0;
 
 #Count of practice block ran
 int practice_round = 1; #haven't figured out what to do with this variable yet.
@@ -50,22 +53,70 @@ begin
 				answer = LONG_port;
 			end;
 	
-			play_sound_trial( sound_idx, BLOCK, i, j, this_iti );
+			play_sound_trial( sound_idx, BLOCK, i, j);
 			
 			int parti_response = read_response(); #Shuld be either 1, 2 (Channel 1 / Channel 2) or 0 (no response)
 			term.print("Last port num: " + string( parti_response ) + "\n");
 			p_elapsed = p_elapsed + 1;
 			
+			# [overwritten] Update correct count and change feedback caption
+			# if parti_response == 0 then #No response
+			#	fb_text.set_caption( lang.get_text( "Feedback slow Caption" ) );
+			# elseif parti_response == answer then
+			#	p_correct = p_correct + 1;
+			#	fb_text.set_caption( lang.get_text( "Feedback correct Caption" ) );
+			# else 	
+			#	fb_text.set_caption( lang.get_text( "Feedback wrong Caption" ) );
+			# end;
+			
+			# accuracy score
+			int acc = 0;
+			if parti_response == answer then
+				acc = 1;
+			end;
+				
+			trial_no = (i-1)*7 + j;
+			
+			#  Update event code & store data
+			info_event.set_event_code( 
+				"Stim;" +
+				logfile.subject() + ";" +
+				BLOCK + ";" +
+				string( practice_round ) + ";" +
+				string( trial_no ) + ";" +
+				string( sound_idx )  + ";" +
+				string( this_iti)  + ";" +
+				string( answer )  + ";" +
+				string( parti_response ) + ";" +
+				string( acc )
+			);		
+			info_trial.present();
+					
+			# count all targets
+			if sound_idx == 1 || sound_idx ==7 then
+				p_target = p_target + 1;
+			end;
+				
 			#Update correct count and change feedback caption
 			if parti_response == 0 then #No response
 				fb_text.set_caption( lang.get_text( "Feedback slow Caption" ) );
-			elseif parti_response == answer then
-				p_correct = p_correct + 1;
-				fb_text.set_caption( lang.get_text( "Feedback correct Caption" ) );
-			else 	
-				fb_text.set_caption( lang.get_text( "Feedback wrong Caption" ) );
+				fb_trial.set_duration(FB_DURATION_ANCHOR);
+			else
+				if sound_idx == 1 || sound_idx == 7 then
+					if parti_response == answer then
+						p_correct = p_correct + 1;
+						fb_text.set_caption( lang.get_text( "Feedback correct Caption" ) );
+						fb_trial.set_duration(FB_DURATION_ANCHOR);
+					else
+						fb_text.set_caption( lang.get_text( "Feedback wrong Caption" ) );
+						fb_trial.set_duration(FB_DURATION_ANCHOR);
+					end;		
+				else # no feedback for non-target
+					fb_text.set_caption( " " );
+					fb_trial.set_duration(FB_DURATION_OTHERS);
+				end;
 			end;
-				
+					
 			play_feedback_trial();
 			
 			
@@ -78,7 +129,8 @@ begin
 	end;
 	
 	#Calculate accuracy
-	p_accuracy = round(p_correct / p_elapsed, 3);
+	#p_accuracy = round(p_correct / p_elapsed, 3);
+	p_accuracy = round(p_correct / p_target, 3);
 	
 	#Practice End/Repeat Caption
 	if p_accuracy >= accuracy_threshold then
@@ -86,6 +138,7 @@ begin
 	else	
 		play_instruct_trial( lang.get_text( "Practice Fail Caption" ) );
 		p_accuracy = 0;
+		p_target = 0; 
 		practice_round = practice_round + 1; 
 	end;
 			
