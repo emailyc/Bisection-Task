@@ -11,6 +11,8 @@ double t_elapsed = 0.00;
 double t_correct = 0.00;
 #Accuracy
 double t_accuracy = 0.00;
+# new var 
+double t_target = 0.00;
 
 array<string> sequence[ROW][COLLUMN] = read_sequence_file( logfile.subject() ); #the function returns a 2-D string array.
 
@@ -37,23 +39,55 @@ begin
 			answer = LONG_port;
 		end;
 	
-		play_sound_trial( sound_idx, BLOCK, i, j, this_iti);
+		play_sound_trial( sound_idx, BLOCK, i, j);
 		
 		int parti_response = read_response(); #Shuld be either 1, 2 (Channel 1 / Channel 2) or 0 (no response)
 		term.print("Last port num: " + string( parti_response ) + "\n");
 		t_elapsed = t_elapsed + 1;
 		
-		#Update correct count
-		if parti_response == answer then
-			t_correct = t_correct + 1;
-		end;
+		# [overwritten] Update correct count
+		#if parti_response == answer then
+		#	t_correct = t_correct + 1;
+		#end;
 			
+		
+		# accuracy score
+		int acc = 0;
+		if parti_response == answer then
+			acc = 1;
+		end; 
+
+		#Update correct count
+		
+	      if sound_idx == 1 || sound_idx ==7 then
+		 t_target = t_target + 1;
+
+		 if parti_response == answer then
+		    t_correct = t_correct + 1;
+		 end;
+	      end;		
+			
+		#  Update event code & store data
+		info_event.set_event_code( 
+			"Stim;" +
+			logfile.subject() + ";" +
+			BLOCK + ";" +
+			string( i ) + ";" +
+			string( j ) + ";" +
+			string( sound_idx )  + ";" +
+			string( this_iti)  + ";" +
+			string( answer )  + ";" +
+			string( parti_response ) + ";" +
+			string( acc )
+		);		
+		info_trial.present();
+				
 		j = j + 1;
 	end;
 	
 	#Calculate accuracy
-	t_accuracy = round(t_correct / t_elapsed, 3);
-	
+	# t_accuracy = round(t_correct / t_elapsed, 3);
+	t_accuracy = round(t_correct /t_target, 3);	
 	
 	string block_comp = lang.get_text( "Block Complete Caption" );
 	block_comp = block_comp.replace("[BLOCK_STATS]", string(t_accuracy));
