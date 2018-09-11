@@ -36,6 +36,7 @@ begin
 		elseif sound_idx > MIDDLE_IDX then
 			answer = LONG_port;
 		end;
+		term.print( “Test trial ” +  string(j) + " correct answer: " + string( answer) + "\n");
 	
 		play_sound_trial( sound_idx, BLOCK, i, j, this_iti);
 		
