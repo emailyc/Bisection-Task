@@ -38,7 +38,7 @@ Press SPACE to do a short practice if you have memorised both tarhet durations.<
     <item key="Rest Screen Caption">Click the left mouse button to begin when you are ready to move on to the next part.</item>
     <item key="Progress Bar Caption">Progress:</item>
     <item key="Practice Caption">You will start by doing a few examples for practice.
-If you fail to get the target durations correct, you will repeat this practice.</item>
+Response feedback for target durations will be provided. Practice session will repeat until your performance is satisfactory.</item>
     <item key="Practice Complete Caption">You have completed the practice.
 	
  
