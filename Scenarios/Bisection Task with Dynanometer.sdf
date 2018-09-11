@@ -1,7 +1,17 @@
-# Bisection
 
-event_pair_table my_rm_table( subject_id1, block_name1, block_number1, trial_number1, probe1, ITI1 )
-good_pairs(rm_all) :: event_cond1 == "Stim"
+# updated to include response data
 
-print "Subject Id\tBlock Type\tBlock Number\tTrial Number\tProbe Condition\tInter-Trial Interval"
-print my_rm_table( good_pairs, "\t", "\n", no_header_row )
+event_table my_table( subject_id, block_name, block_number, trial_number, probe, ITI, correctAns, resp, accuracy )
+stim_events: event_cond == "Stim"
+
+print "Subject Id\tBlock Type\tBlock Number\tTrial Number\tProbe Condition\tInter-Trial Interval\tAnswer\tResponse\tAcc Score"
+print my_table( stim_events, "\t", "\n", no_header_row )
+
+
+# Bisection (outdated)
+
+# event_pair_table my_rm_table( subject_id1, block_name1, block_number1, trial_number1, probe1, ITI1 )
+# good_pairs(rm_all) :: event_cond1 == "Stim"
+
+# print "Subject Id\tBlock Type\tBlock Number\tTrial Number\tProbe Condition\tInter-Trial Interval"
+# print my_rm_table( good_pairs, "\t", "\n", no_header_row )
