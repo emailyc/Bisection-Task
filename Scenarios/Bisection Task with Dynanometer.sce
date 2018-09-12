@@ -21,7 +21,10 @@ stimulus_properties =
 	block_number, number,
 	trial_number, number,	
 	probe, number,
-	ITI, number;
+	ITI, number,
+	correctAns, number,
+	resp, number,
+	accuracy, number;
 
 # ------------------------------- SDL Part ------------------------------
 begin;
@@ -202,6 +205,7 @@ play_ITI_trial( ONE_SEC ); #Just a short blank screen between blocks
 
 # ----------------------------- PRACTICE Block -----------------------------
 
+play_instruct_trial( lang.get_text( "Practice Start" ) );
 play_instruct_trial( lang.get_text( "Response Prompt Caption" ) );
 include_once "..\\PCLs\\Practice_Block.pcl";
 play_break_trial( "BREAK" );
@@ -210,7 +214,7 @@ play_ITI_trial( ONE_SEC ); #Just a short blank screen between blocks
 
 
 # ----------------------------- TEST Block -----------------------------
-
+play_instruct_trial( lang.get_text( "Test Start" ) );
 include_once "..\\PCLs\\Test_Block.pcl";
 
 # ----------------------------- END -----------------------------

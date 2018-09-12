@@ -6,7 +6,7 @@ int ROW = 49;
 int COLLUMN = 4;
 
 #Count of trials elapsed
-double t_elapsed = 0.00;
+double t_target = 0.00;
 #Count of correct responds;
 double t_correct = 0.00;
 #Accuracy
@@ -29,30 +29,32 @@ begin
 		play_ITI_trial( this_iti );
 		int sound_idx = int(sequence[j][i]);	
 
-		#Determine the correct answer for this trial
-		int answer;
-		if sound_idx <= MIDDLE_IDX then
-			answer = SHORT_port;
-		elseif sound_idx > MIDDLE_IDX then
-			answer = LONG_port;
-		end;
+		#Determine the correct answer port for this trial
+		int answer = get_answer( sound_idx ); 
 	
-		play_sound_trial( sound_idx, BLOCK, i, j, this_iti);
+		play_sound_trial( sound_idx );
 		
 		int parti_response = read_response(); #Shuld be either 1, 2 (Channel 1 / Channel 2) or 0 (no response)
-		term.print("Last port num: " + string( parti_response ) + "\n");
-		t_elapsed = t_elapsed + 1;
+		
+		store_data( BLOCK, i, j, sound_idx, this_iti, answer, parti_response ); #(BLOCK, block_number, trial_number, sound_idx, this_iti, answer, response(just -1 here))
 		
 		#Update correct count
-		if parti_response == answer then
-			t_correct = t_correct + 1;
+		if sound_idx == 1 || sound_idx == 7 then
+			t_target = t_target + 1;
+			if parti_response == answer then
+				term.print("Response: " + string(parti_response) + "\n");
+				term.print("Answer: " + string(answer) + "\n");
+				t_correct = t_correct + 1;
+				term.print(string(t_correct) + "\n");
+				term.print("\n");
+			end;
 		end;
 			
 		j = j + 1;
 	end;
 	
 	#Calculate accuracy
-	t_accuracy = round(t_correct / t_elapsed, 3);
+	t_accuracy = round(t_correct / t_target, 3);
 	
 	
 	string block_comp = lang.get_text( "Block Complete Caption" );
@@ -63,6 +65,8 @@ begin
 	play_break_trial( "BREAK" );
 	play_ITI_trial( TWO_SEC ); #Just a 2 second buffer so the next block don't jump on you.
 		
+	t_correct = 0;
+	t_target = 0;	
 	
 	i = i + 1;
 end;

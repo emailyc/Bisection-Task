@@ -21,25 +21,60 @@ begin
 	instruct_text.unload();
 end;	
 
+
+sub
+	int get_answer( int sound_idx )
+begin
+		int x;
+		if sound_idx <= MIDDLE_IDX then
+			x = SHORT_port;
+		elseif sound_idx > MIDDLE_IDX then
+			x = LONG_port;
+		end;
+	return x;	
+end;		
+
+sub 
+	store_data(string block, int block_number, int trial_number, int sound_idx, int this_iti , int answer, int parti_response)
+begin
+	stimulus_data last = stimulus_manager.last_stimulus_data();
+	
+	int correct = 0;
+	if answer == parti_response then
+		correct = 1;
+	end;	
+	
+	string short;
+	if mod( parti_num_int, 2 ) == 1 then #odd	
+		short = "left";
+	elseif mod( parti_num_int, 2 ) == 0 then #even
+		short = "right";
+	end;	
+	
+	last.set_event_code( 
+			"Stim;" +
+			logfile.subject() + ";" +
+			block + ";" +
+			string( block_number ) + ";" +
+			string( trial_number ) + ";" +
+			string( sound_idx )  + ";" +
+			string( this_iti)  + ";" +
+			string( answer )  + ";" +
+			string( parti_response ) + ";" +
+			string( correct )+ ";" +
+			short
+		);	
+end;	
+
 	
 sub
-    play_sound_trial( int sound_idx, string block, int block_number, int trial_number, int this_iti )
+    play_sound_trial( int sound_idx )
 begin
 	anchor_text.load();
 	string filename = sounds[sound_idx].get_wavefile().filename();
 	filename = filename.replace( stimulus_directory, "" ); #remove path
 	filename = filename.replace( ".wav", "" );#remove extension name
-		
-	# Update event code & store data
-	sound_event.set_event_code( 
-		"Stim;" +
-		logfile.subject() + ";" +
-		block + ";" +
-		string( block_number ) + ";" +
-		string( trial_number ) + ";" +
-		string( sound_idx )  + ";" +
-		string( this_iti)
-	);		
+			
 		
 	sounds[sound_idx].get_wavefile().load();
 	sound_event.set_stimulus( sounds[sound_idx] );
@@ -50,7 +85,7 @@ begin
 	end;
 	sound_event.set_code_width( int(filename) ); #set the pulse_width of the corrosponding AI channel on LabView.
 	sound_trial.set_duration( int(filename) + TWO_SEC ); #Duration of stimuli + 2000ms response time.
-	port.clear(); #Clear all record of dynamometer input incase participant squeezed after previoud trial and before thsi trial starts.
+	port.clear(); #Clear all record of dynamometer input incase participant squeezed after previoud trial and before current trial starts.
 	sound_trial.present();
 	sounds[sound_idx].get_wavefile().unload();
 	anchor_text.unload();

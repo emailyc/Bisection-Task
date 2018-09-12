@@ -13,18 +13,18 @@ int FB_DURATION_ANCHOR = 700;
 int FB_DURATION_OTHERS = 100;
 double accuracy_threshold = 0.80000000;
 
-#Count of trials elapsed
-double p_elapsed = 0.00;
-#Count of correct responds;
-double p_correct = 0.00;
+#Pass practice block or not
+bool pass;
 #Accuracy
 double p_accuracy = 0.00;
 
 #Count of practice block ran
 int practice_round = 1; #haven't figured out what to do with this variable yet.
 
-loop until p_accuracy >= accuracy_threshold
+loop until pass
 begin
+	pass = true;
+	
 
 	loop
 		 int i = 1
@@ -42,30 +42,30 @@ begin
 			
 			int sound_idx = practice_sounds_idx[j];	
 			
-			#Determine the correct answer for this trial
-			int answer;
-			if sound_idx <= MIDDLE_IDX then
-				answer = SHORT_port;
-			elseif sound_idx > MIDDLE_IDX then
-				answer = LONG_port;
-			end;
+			#Determine the correct answer port for this trial
+			int answer = get_answer( sound_idx );
 	
-			play_sound_trial( sound_idx, BLOCK, i, j, this_iti );
-			
-			int parti_response = read_response(); #Shuld be either 1, 2 (Channel 1 / Channel 2) or 0 (no response)
-			term.print("Last port num: " + string( parti_response ) + "\n");
-			p_elapsed = p_elapsed + 1;
-			
-			#Update correct count and change feedback caption
-			if parti_response == 0 then #No response
-				fb_text.set_caption( lang.get_text( "Feedback slow Caption" ) );
-			elseif parti_response == answer then
-				p_correct = p_correct + 1;
-				fb_text.set_caption( lang.get_text( "Feedback correct Caption" ) );
-			else 	
-				fb_text.set_caption( lang.get_text( "Feedback wrong Caption" ) );
-			end;
+			play_sound_trial( sound_idx );
+			int parti_response = read_response(); #Should be either 1, 2 (Channel 1 / Channel 2) or 0 (no response)
+			store_data( BLOCK, i, j, sound_idx, this_iti, answer, parti_response ); #(BLOCK, block_number, trial_number, sound_idx, this_iti, answer, response(just -1 here))
 				
+			if parti_response == 0 then #No response
+				fb_text.set_caption( lang.get_text( "Feedback slow Caption" ) );	
+				if sound_idx == 1 || sound_idx == 7 then
+					pass = false;
+				end;	
+			elseif sound_idx == 1 || sound_idx == 7 then
+				#Update correct count and change feedback caption
+				if parti_response == answer then
+					fb_text.set_caption( lang.get_text( "Feedback correct Caption" ) );	
+				else
+					fb_text.set_caption( lang.get_text( "Feedback wrong Caption" ) );
+					pass = false; #fail one anchor stimuli, redoooooooo!!!!!!!!!!!!
+				end;
+			else
+				fb_text.set_caption( lang.get_text( "Feedback ready for next Caption" ) );
+			end;		
+			
 			play_feedback_trial();
 			
 			
@@ -77,15 +77,10 @@ begin
 		i = i + 1;
 	end;
 	
-	#Calculate accuracy
-	p_accuracy = round(p_correct / p_elapsed, 3);
 	
 	#Practice End/Repeat Caption
-	if p_accuracy >= accuracy_threshold then
-		play_instruct_trial( lang.get_text( "Practice Complete Caption" ) );
-	else	
+	if !pass then
 		play_instruct_trial( lang.get_text( "Practice Fail Caption" ) );
-		p_accuracy = 0;
 		practice_round = practice_round + 1; 
 	end;
 			

@@ -26,8 +26,8 @@ begin
 		
 		int this_iti = random( ONE_SEC, TWO_SEC ) ;
 		play_ITI_trial( this_iti );	
-		play_sound_trial( caption_idx, BLOCK, i, j, this_iti);
-		
+		play_sound_trial( caption_idx );
+		store_data( BLOCK, i, j, caption_idx, this_iti, caption_idx, -1); #(BLOCK, block_number, trial_number, sound_idx (1 or 7 here), this_iti, sound_idx (again 1 or 7 here), response(just -1 here), accuracy (just -1 here))
 		
 		caption_idx = sounds.count()/caption_idx; #Alternating between the 1st and the 7th element of the sounds array
 		j = j + 1

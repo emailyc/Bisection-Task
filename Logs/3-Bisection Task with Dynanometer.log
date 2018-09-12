@@ -1,0 +1,24 @@
+Scenario - Bisection Task
+Logfile written - 09/12/2018 18:00:32
+
+Subject	Trial	Event Type	Code	event_cond(str)	subject_id(num)	block_name(str)	block_number(num)	trial_number(num)	probe(num)	ITI(num)	correctAns(num)	resp(num)	accuracy(num)	Time	TTime	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur	Stim Type	Pair Index
+
+3	1	Picture	Instruction	Instruction										208	0	1	4652	1	0	next	other	0
+3	1	Response	1											4808	4600	1
+3	2	Picture	ITI	ITI										4860	0	1	13679	1	0	next	other	0
+3	3	Quit												24729	6887	NA
+
+
+{
+   "app": "Presentation Version 20.1 Build 12.04.17",
+   "device": "LENOVO 10FGCTO1WW",
+   "experiment": "{772213B2-5F0F-4A35-9C2F-36954700C7EA}",
+   "os": "Windows 7 64 bit",
+   "package": "",
+   "parameters": {
+      "configuration": "Default configuration"
+   },
+   "scenario": "Bisection Task with Dynanometer.sce",
+   "subject": "3",
+   "timestamp": "2018/09/12 10:00:22 GMT"
+}
