@@ -58,7 +58,7 @@ begin
 	
 	
 	string block_comp = lang.get_text( "Block Complete Caption" );
-	block_comp = block_comp.replace("[BLOCK_STATS]", string(t_accuracy));
+	block_comp = block_comp.replace("[BLOCK_STATS]", string( t_accuracy * 100 ) + "%");
 	block_comp = block_comp.replace("[BLOCK_NUMBER]", string(i) );
 	block_comp = block_comp.replace("[TOTAL_BLOCKS]", string(COLLUMN) );
 	play_instruct_trial( block_comp );
