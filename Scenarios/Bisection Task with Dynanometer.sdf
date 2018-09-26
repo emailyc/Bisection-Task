@@ -1,7 +1,7 @@
 # Bisection
 
-event_table my_table( subject_id, block_name, block_number, trial_number, probe, ITI, correctAns, resp, accuracy, short )
+event_table my_table( subject_id, block_name, block_number, trial_number, probe, ITI, correctAns, resp, accuracy, short)
 stim_events: event_cond == "Stim"
 
-print "Subject Id\tBlock Type\tBlock Number\tTrial Number\tProbe Condition\tInter-Trial Interval\tAnswer\tResponse\tScore\Short Dynomometer"
+print "Subject Id\tBlock Type\tBlock Number\tTrial Number\tProbe Condition\tInter-Trial Interval\tAnswer\tResponse\tScore\tShort Dynomometer"
 print my_table( stim_events, "\t", "\n", no_header_row )

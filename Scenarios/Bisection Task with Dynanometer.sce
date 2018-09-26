@@ -1,4 +1,4 @@
-# -------------------------- Header Parameters --------------------------
+  # -------------------------- Header Parameters --------------------------
 
 scenario = "Bisection Task"; 
 
@@ -24,7 +24,8 @@ stimulus_properties =
 	ITI, number,
 	correctAns, number,
 	resp, number,
-	accuracy, number;
+	accuracy, number,
+	short, string;
 
 # ------------------------------- SDL Part ------------------------------
 begin;
