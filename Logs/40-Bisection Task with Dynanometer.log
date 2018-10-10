@@ -1,0 +1,308 @@
+Scenario - Bisection Task
+Logfile written - 10/10/2018 15:59:30
+
+Subject	Trial	Event Type	Code	event_cond(str)	subject_id(num)	block_name(str)	block_number(num)	trial_number(num)	probe(num)	ITI(num)	correctAns(num)	resp(num)	accuracy(num)	short(str)	Time	TTime	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur	Stim Type	Pair Index
+
+40	1	Picture	Instruction	Instruction											167	0	1	112649	1	0	next	other	0
+40	1	Response	1												112702	112536	0
+40	2	Picture	Stim;40;study;1;1;1;1520;1;-1;0;right	Stim	40	study	1	1	1	1520	1	-1	0	right	112816	0	1	16664	1	0	next	other	0
+40	4	Picture	Stim;40;study;1;2;7;1661;7;-1;0;right	Stim	40	study	1	2	7	1661	7	-1	0	right	158142	0	1	16831	1	0	next	other	0
+40	6	Picture	Stim;40;study;1;3;1;1318;1;-1;0;right	Stim	40	study	1	3	1	1318	1	-1	0	right	224798	0	1	13331	1	0	next	other	0
+40	8	Picture	Stim;40;study;1;4;7;1278;7;-1;0;right	Stim	40	study	1	4	7	1278	7	-1	0	right	268125	0	1	12998	1	0	next	other	0
+40	10	Picture	Stim;40;study;1;5;1;1495;1;-1;0;right	Stim	40	study	1	5	1	1495	1	-1	0	right	330948	0	1	15164	1	0	next	other	0
+40	12	Picture	Stim;40;study;1;6;7;1364;7;-1;0;right	Stim	40	study	1	6	7	1364	7	-1	0	right	376108	0	1	13831	1	0	next	other	0
+40	14	Picture	Stim;40;study;1;7;1;1616;1;-1;0;right	Stim	40	study	1	7	1	1616	1	-1	0	right	439765	0	1	16331	1	0	next	other	0
+40	16	Picture	Stim;40;study;1;8;7;1286;7;-1;0;right	Stim	40	study	1	8	7	1286	7	-1	0	right	486091	0	1	12998	1	0	next	other	0
+40	18	Picture	Stim;40;study;1;9;1;1809;1;-1;0;right	Stim	40	study	1	9	1	1809	1	-1	0	right	549081	0	1	18164	1	0	next	other	0
+40	20	Picture	Stim;40;study;1;10;7;1641;7;-1;0;right	Stim	40	study	1	10	7	1641	7	-1	0	right	597240	0	1	16497	1	0	next	other	0
+40	22	Picture	End_Block	End_Block											663730	0	1	76321	1	0	next	other	0
+40	22	Response	1												739916	76186	1
+40	23	Picture	Break	Break											740051	0	1	2666	1	0	next	other	0
+40	23	Response	1												742635	2583	0
+40	24	Picture	ITI	ITI											742718	0	1	10165	1	0	next	other	0
+40	25	Picture	Instruction	Instruction											752883	0	1	287789	1	0	next	other	0
+40	25	Response	1												1040523	287641	1
+40	26	Picture	Instruction	Instruction											1040671	0	1	109150	1	0	next	other	0
+40	26	Response	1												1149632	108961	0
+40	27	Picture	Stim;40;practice;1;1;3;1000;2;2;1;right	Stim	40	practice	1	1	3	1000	2	2	1	right	1149821	0	1	10165	1	0	next	other	0
+40	29	Picture	Feedback	Feedback											1194314	0	1	7166	1	0	next	other	0
+40	30	Picture	Stim;40;practice;1;2;1;1000;2;2;1;right	Stim	40	practice	1	2	1	1000	2	2	1	right	1201480	0	1	10165	1	0	next	other	0
+40	32	Picture	Feedback	Feedback											1241640	0	1	7166	1	0	next	other	0
+40	33	Picture	Stim;40;practice;1;3;2;1000;2;1;0;right	Stim	40	practice	1	3	2	1000	2	1	0	right	1248806	0	1	10165	1	0	next	other	0
+40	35	Picture	Feedback	Feedback											1290966	0	1	7166	1	0	next	other	0
+40	36	Picture	Stim;40;practice;1;4;4;1000;2;1;0;right	Stim	40	practice	1	4	4	1000	2	1	0	right	1298131	0	1	10165	1	0	next	other	0
+40	38	Picture	Feedback	Feedback											1345624	0	1	7166	1	0	next	other	0
+40	39	Picture	Stim;40;practice;1;5;6;1000;1;1;1;right	Stim	40	practice	1	5	6	1000	1	1	1	right	1352789	0	1	10165	1	0	next	other	0
+40	41	Picture	Feedback	Feedback											1407781	0	1	7166	1	0	next	other	0
+40	42	Picture	Stim;40;practice;1;6;5;1000;1;1;1;right	Stim	40	practice	1	6	5	1000	1	1	1	right	1414946	0	1	10165	1	0	next	other	0
+40	44	Picture	Feedback	Feedback											1465772	0	1	7165	1	0	next	other	0
+40	45	Picture	Stim;40;practice;1;7;7;1000;1;1;1;right	Stim	40	practice	1	7	7	1000	1	1	1	right	1472937	0	1	10165	1	0	next	other	0
+40	47	Picture	Feedback	Feedback											1532928	0	1	7166	1	0	next	other	0
+40	48	Picture	Stim;40;practice;2;1;2;1000;2;2;1;right	Stim	40	practice	2	1	2	1000	2	2	1	right	1540093	0	1	10165	1	0	next	other	0
+40	50	Picture	Feedback	Feedback											1582254	0	1	7166	1	0	next	other	0
+40	51	Picture	Stim;40;practice;2;2;7;1000;1;1;1;right	Stim	40	practice	2	2	7	1000	1	1	1	right	1589419	0	1	10165	1	0	next	other	0
+40	53	Picture	Feedback	Feedback											1649410	0	1	7166	1	0	next	other	0
+40	54	Picture	Stim;40;practice;2;3;6;1000;1;1;1;right	Stim	40	practice	2	3	6	1000	1	1	1	right	1656575	0	1	10165	1	0	next	other	0
+40	56	Picture	Feedback	Feedback											1711567	0	1	7165	1	0	next	other	0
+40	57	Picture	Stim;40;practice;2;4;4;1000;2;2;1;right	Stim	40	practice	2	4	4	1000	2	2	1	right	1718732	0	1	10165	1	0	next	other	0
+40	59	Picture	Feedback	Feedback											1766225	0	1	7166	1	0	next	other	0
+40	60	Picture	Stim;40;practice;2;5;5;1000;1;2;0;right	Stim	40	practice	2	5	5	1000	1	2	0	right	1773390	0	1	10165	1	0	next	other	0
+40	62	Picture	Feedback	Feedback											1824216	0	1	7166	1	0	next	other	0
+40	63	Picture	Stim;40;practice;2;6;3;1000;2;2;1;right	Stim	40	practice	2	6	3	1000	2	2	1	right	1831381	0	1	10165	1	0	next	other	0
+40	65	Picture	Feedback	Feedback											1875874	0	1	7166	1	0	next	other	0
+40	66	Picture	Stim;40;practice;2;7;1;1000;2;2;1;right	Stim	40	practice	2	7	1	1000	2	2	1	right	1883040	0	1	10165	1	0	next	other	0
+40	68	Picture	Feedback	Feedback											1923200	0	1	7166	1	0	next	other	0
+40	69	Picture	Stim;40;practice;3;1;6;1000;1;1;1;right	Stim	40	practice	3	1	6	1000	1	1	1	right	1930366	0	1	10165	1	0	next	other	0
+40	71	Picture	Feedback	Feedback											1985357	0	1	7165	1	0	next	other	0
+40	72	Picture	Stim;40;practice;3;2;4;1000;2;2;1;right	Stim	40	practice	3	2	4	1000	2	2	1	right	1992523	0	1	10165	1	0	next	other	0
+40	74	Picture	Feedback	Feedback											2040016	0	1	7166	1	0	next	other	0
+40	75	Picture	Stim;40;practice;3;3;3;1000;2;2;1;right	Stim	40	practice	3	3	3	1000	2	2	1	right	2047181	0	1	10165	1	0	next	other	0
+40	77	Picture	Feedback	Feedback											2091674	0	1	7166	1	0	next	other	0
+40	78	Picture	Stim;40;practice;3;4;5;1000;1;1;1;right	Stim	40	practice	3	4	5	1000	1	1	1	right	2098840	0	1	10165	1	0	next	other	0
+40	80	Picture	Feedback	Feedback											2149665	0	1	7166	1	0	next	other	0
+40	81	Picture	Stim;40;practice;3;5;7;1000;1;1;1;right	Stim	40	practice	3	5	7	1000	1	1	1	right	2156831	0	1	10165	1	0	next	other	0
+40	83	Picture	Feedback	Feedback											2216821	0	1	7165	1	0	next	other	0
+40	84	Picture	Stim;40;practice;3;6;2;1000;2;2;1;right	Stim	40	practice	3	6	2	1000	2	2	1	right	2223987	0	1	10165	1	0	next	other	0
+40	86	Picture	Feedback	Feedback											2266147	0	1	7166	1	0	next	other	0
+40	87	Picture	Stim;40;practice;3;7;1;1000;2;2;1;right	Stim	40	practice	3	7	1	1000	2	2	1	right	2273313	0	1	10165	1	0	next	other	0
+40	89	Picture	Feedback	Feedback											2313473	0	1	7166	1	0	next	other	0
+40	90	Picture	Break	Break											2320638	0	1	136479	1	0	next	other	0
+40	90	Response	1												2457013	136375	1
+40	91	Picture	Instruction	Instruction											2457117	0	1	3333	1	0	next	other	0
+40	91	Response	1												2460292	3175	0
+40	92	Picture	ITI	ITI											2460450	0	1	10165	1	0	next	other	0
+40	93	Picture	Instruction	Instruction											2470615	0	1	693559	1	0	next	other	0
+40	93	Response	1												3163977	693362	1
+40	94	Picture	Stim;40;test;1;1;5;1677;1;1;1;right	Stim	40	test	1	1	5	1677	1	1	1	right	3164174	0	1	16831	1	0	next	other	0
+40	96	Picture	Stim;40;test;1;2;4;1268;2;2;1;right	Stim	40	test	1	2	4	1268	2	2	1	right	3221831	0	1	12831	1	0	next	other	0
+40	98	Picture	Stim;40;test;1;3;7;1552;1;1;1;right	Stim	40	test	1	3	7	1552	1	1	1	right	3271990	0	1	15664	1	0	next	other	0
+40	100	Picture	Stim;40;test;1;4;7;1448;1;1;1;right	Stim	40	test	1	4	7	1448	1	1	1	right	3337647	0	1	14664	1	0	next	other	0
+40	102	Picture	Stim;40;test;1;5;5;1188;1;1;1;right	Stim	40	test	1	5	5	1188	1	1	1	right	3402137	0	1	11998	1	0	next	other	0
+40	104	Picture	Stim;40;test;1;6;1;1781;2;2;1;right	Stim	40	test	1	6	1	1781	2	2	1	right	3454962	0	1	17997	1	0	next	other	0
+40	106	Picture	Stim;40;test;1;7;5;1461;1;2;0;right	Stim	40	test	1	7	5	1461	1	2	0	right	3502954	0	1	14664	1	0	next	other	0
+40	108	Picture	Stim;40;test;1;8;3;1988;2;2;1;right	Stim	40	test	1	8	3	1988	2	2	1	right	3558446	0	1	19997	1	0	next	other	0
+40	110	Picture	Stim;40;test;1;9;7;1359;1;1;1;right	Stim	40	test	1	9	7	1359	1	1	1	right	3612937	0	1	13664	1	0	next	other	0
+40	112	Picture	Stim;40;test;1;10;6;1886;1;1;1;right	Stim	40	test	1	10	6	1886	1	1	1	right	3676594	0	1	18997	1	0	next	other	0
+40	114	Picture	Stim;40;test;1;11;3;1561;2;2;1;right	Stim	40	test	1	11	3	1561	2	2	1	right	3740584	0	1	15664	1	0	next	other	0
+40	116	Picture	Stim;40;test;1;12;3;1502;2;0;0;right	Stim	40	test	1	12	3	1502	2	0	0	right	3790743	0	1	15164	1	0	next	other	0
+40	118	Picture	Stim;40;test;1;13;1;1360;2;2;1;right	Stim	40	test	1	13	1	1360	2	2	1	right	3840235	0	1	13665	1	0	next	other	0
+40	120	Picture	Stim;40;test;1;14;7;1876;1;1;1;right	Stim	40	test	1	14	7	1876	1	1	1	right	3883895	0	1	18830	1	0	next	other	0
+40	122	Picture	Stim;40;test;1;15;1;1579;2;2;1;right	Stim	40	test	1	15	1	1579	2	2	1	right	3952718	0	1	15998	1	0	next	other	0
+40	124	Picture	Stim;40;test;1;16;3;1470;2;1;0;right	Stim	40	test	1	16	3	1470	2	1	0	right	3998711	0	1	14831	1	0	next	other	0
+40	126	Picture	Stim;40;test;1;17;6;1986;1;1;1;right	Stim	40	test	1	17	6	1986	1	1	1	right	4047870	0	1	19997	1	0	next	other	0
+40	128	Picture	Stim;40;test;1;18;6;1852;1;1;1;right	Stim	40	test	1	18	6	1852	1	1	1	right	4112859	0	1	18664	1	0	next	other	0
+40	130	Picture	Stim;40;test;1;19;2;1831;2;0;0;right	Stim	40	test	1	19	2	1831	2	0	0	right	4176516	0	1	18497	1	0	next	other	0
+40	132	Picture	Stim;40;test;1;20;6;1725;1;1;1;right	Stim	40	test	1	20	6	1725	1	1	1	right	4227008	0	1	17331	1	0	next	other	0
+40	134	Picture	Stim;40;test;1;21;1;1334;2;2;1;right	Stim	40	test	1	21	1	1334	2	2	1	right	4289332	0	1	13498	1	0	next	other	0
+40	136	Picture	Stim;40;test;1;22;6;1291;1;1;1;right	Stim	40	test	1	22	6	1291	1	1	1	right	4332824	0	1	12999	1	0	next	other	0
+40	138	Picture	Stim;40;test;1;23;7;1096;1;1;1;right	Stim	40	test	1	23	7	1096	1	1	1	right	4390816	0	1	11165	1	0	next	other	0
+40	140	Picture	Stim;40;test;1;24;4;1135;2;1;0;right	Stim	40	test	1	24	4	1135	2	1	0	right	4451807	0	1	11498	1	0	next	other	0
+40	142	Picture	Stim;40;test;1;25;6;1995;1;1;1;right	Stim	40	test	1	25	6	1995	1	1	1	right	4500632	0	1	20164	1	0	next	other	0
+40	144	Picture	Stim;40;test;1;26;4;1473;2;1;0;right	Stim	40	test	1	26	4	1473	2	1	0	right	4565622	0	1	14831	1	0	next	other	0
+40	146	Picture	Stim;40;test;1;27;4;1014;2;2;1;right	Stim	40	test	1	27	4	1014	2	2	1	right	4617781	0	1	10332	1	0	next	other	0
+40	148	Picture	Stim;40;test;1;28;3;1487;2;2;1;right	Stim	40	test	1	28	3	1487	2	2	1	right	4665273	0	1	14998	1	0	next	other	0
+40	150	Picture	Stim;40;test;1;29;5;1072;1;2;0;right	Stim	40	test	1	29	5	1072	1	2	0	right	4714599	0	1	10832	1	0	next	other	0
+40	152	Picture	Stim;40;test;1;30;5;1904;1;1;1;right	Stim	40	test	1	30	5	1904	1	1	1	right	4766258	0	1	19164	1	0	next	other	0
+40	154	Picture	Stim;40;test;1;31;2;1955;2;2;1;right	Stim	40	test	1	31	2	1955	2	2	1	right	4826248	0	1	19662	2	0	next	other	0
+40	156	Picture	Stim;40;test;1;32;7;1077;1;1;1;right	Stim	40	test	1	32	7	1077	1	1	1	right	4877907	0	1	10832	1	0	next	other	0
+40	158	Picture	Stim;40;test;1;33;2;1808;2;2;1;right	Stim	40	test	1	33	2	1808	2	2	1	right	4938731	0	1	18164	1	0	next	other	0
+40	160	Picture	Stim;40;test;1;34;1;1872;2;2;1;right	Stim	40	test	1	34	1	1872	2	2	1	right	4988890	0	1	18831	1	0	next	other	0
+40	162	Picture	Stim;40;test;1;35;2;1607;2;2;1;right	Stim	40	test	1	35	2	1607	2	2	1	right	5037715	0	1	16164	1	0	next	other	0
+40	164	Picture	Stim;40;test;1;36;4;1680;2;2;1;right	Stim	40	test	1	36	4	1680	2	2	1	right	5085875	0	1	16997	1	0	next	other	0
+40	166	Picture	Stim;40;test;1;37;1;1208;2;2;1;right	Stim	40	test	1	37	1	1208	2	2	1	right	5140033	0	1	12165	1	0	next	other	0
+40	168	Picture	Stim;40;test;1;38;1;1215;2;2;1;right	Stim	40	test	1	38	1	1215	2	2	1	right	5182193	0	1	12331	1	0	next	other	0
+40	170	Picture	Stim;40;test;1;39;4;1524;2;1;0;right	Stim	40	test	1	39	4	1524	2	1	0	right	5224520	0	1	15331	1	0	next	other	0
+40	172	Picture	Stim;40;test;1;40;5;1425;1;1;1;right	Stim	40	test	1	40	5	1425	1	1	1	right	5277178	0	1	14331	1	0	next	other	0
+40	174	Picture	Stim;40;test;1;41;7;1519;1;1;1;right	Stim	40	test	1	41	7	1519	1	1	1	right	5332336	0	1	15331	1	0	next	other	0
+40	176	Picture	Stim;40;test;1;42;3;1969;2;1;0;right	Stim	40	test	1	42	3	1969	2	1	0	right	5397659	0	1	19830	1	0	next	other	0
+40	178	Picture	Stim;40;test;1;43;2;1422;2;2;1;right	Stim	40	test	1	43	2	1422	2	2	1	right	5451818	0	1	14331	1	0	next	other	0
+40	180	Picture	Stim;40;test;1;44;3;1794;2;2;1;right	Stim	40	test	1	44	3	1794	2	2	1	right	5498144	0	1	17997	1	0	next	other	0
+40	182	Picture	Stim;40;test;1;45;4;1143;2;2;1;right	Stim	40	test	1	45	4	1143	2	2	1	right	5550636	0	1	11498	1	0	next	other	0
+40	184	Picture	Stim;40;test;1;46;2;1517;2;2;1;right	Stim	40	test	1	46	2	1517	2	2	1	right	5599461	0	1	15331	1	0	next	other	0
+40	186	Picture	Stim;40;test;1;47;2;1950;2;2;1;right	Stim	40	test	1	47	2	1950	2	2	1	right	5646787	0	1	19664	1	0	next	other	0
+40	188	Picture	Stim;40;test;1;48;5;1154;1;1;1;right	Stim	40	test	1	48	5	1154	1	1	1	right	5698446	0	1	11665	1	0	next	other	0
+40	190	Picture	Stim;40;test;1;49;6;1407;1;1;1;right	Stim	40	test	1	49	6	1407	1	1	1	right	5750938	0	1	14164	1	0	next	other	0
+40	192	Picture	Instruction	Instruction											5810095	0	1	108650	1	0	next	other	0
+40	192	Response	1												5918483	108388	1
+40	193	Picture	Break	Break											5918745	0	1	25496	1	0	next	other	0
+40	193	Response	1												5944160	25415	0
+40	194	Picture	ITI	ITI											5944241	0	1	20164	1	0	next	other	0
+40	195	Picture	Stim;40;test;2;1;7;1211;1;1;1;right	Stim	40	test	2	1	7	1211	1	1	1	right	5964404	0	1	12165	1	0	next	other	0
+40	197	Picture	Stim;40;test;2;2;5;1220;1;1;1;right	Stim	40	test	2	2	5	1220	1	1	1	right	6026562	0	1	12331	1	0	next	other	0
+40	199	Picture	Stim;40;test;2;3;5;1800;1;1;1;right	Stim	40	test	2	3	5	1800	1	1	1	right	6079720	0	1	18164	1	0	next	other	0
+40	201	Picture	Stim;40;test;2;4;4;1717;2;2;1;right	Stim	40	test	2	4	4	1717	2	2	1	right	6138711	0	1	17331	1	0	next	other	0
+40	203	Picture	Stim;40;test;2;5;3;1127;2;2;1;right	Stim	40	test	2	5	3	1127	2	2	1	right	6193369	0	1	11332	1	0	next	other	0
+40	205	Picture	Stim;40;test;2;6;2;1299;2;2;1;right	Stim	40	test	2	6	2	1299	2	2	1	right	6239195	0	1	13165	1	0	next	other	0
+40	207	Picture	Stim;40;test;2;7;1;1251;2;2;1;right	Stim	40	test	2	7	1	1251	2	2	1	right	6284355	0	1	12665	1	0	next	other	0
+40	209	Picture	Stim;40;test;2;8;4;1050;2;2;1;right	Stim	40	test	2	8	4	1050	2	2	1	right	6327015	0	1	10665	1	0	next	other	0
+40	211	Picture	Stim;40;test;2;9;4;1758;2;2;1;right	Stim	40	test	2	9	4	1758	2	2	1	right	6375007	0	1	17664	1	0	next	other	0
+40	213	Picture	Stim;40;test;2;10;2;1975;2;2;1;right	Stim	40	test	2	10	2	1975	2	2	1	right	6429999	0	1	19830	1	0	next	other	0
+40	215	Picture	Stim;40;test;2;11;3;1880;2;2;1;right	Stim	40	test	2	11	3	1880	2	2	1	right	6481824	0	1	18997	1	0	next	other	0
+40	217	Picture	Stim;40;test;2;12;7;1534;1;1;1;right	Stim	40	test	2	12	7	1534	1	1	1	right	6535149	0	1	15498	1	0	next	other	0
+40	219	Picture	Stim;40;test;2;13;6;1908;1;1;1;right	Stim	40	test	2	13	6	1908	1	1	1	right	6600472	0	1	19164	1	0	next	other	0
+40	221	Picture	Stim;40;test;2;14;2;1141;2;2;1;right	Stim	40	test	2	14	2	1141	2	2	1	right	6664629	0	1	11498	1	0	next	other	0
+40	223	Picture	Stim;40;test;2;15;6;1489;1;1;1;right	Stim	40	test	2	15	6	1489	1	1	1	right	6708122	0	1	14998	1	0	next	other	0
+40	225	Picture	Stim;40;test;2;16;3;1125;2;2;1;right	Stim	40	test	2	16	3	1125	2	2	1	right	6768113	0	1	11332	1	0	next	other	0
+40	227	Picture	Stim;40;test;2;17;4;1639;2;2;1;right	Stim	40	test	2	17	4	1639	2	2	1	right	6813939	0	1	16497	1	0	next	other	0
+40	229	Picture	Stim;40;test;2;18;6;1745;1;1;1;right	Stim	40	test	2	18	6	1745	1	1	1	right	6867764	0	1	17664	1	0	next	other	0
+40	231	Picture	Stim;40;test;2;19;1;1271;2;2;1;right	Stim	40	test	2	19	1	1271	2	2	1	right	6930254	0	1	12831	1	0	next	other	0
+40	233	Picture	Stim;40;test;2;20;3;1061;2;2;1;right	Stim	40	test	2	20	3	1061	2	2	1	right	6973081	0	1	10665	1	0	next	other	0
+40	235	Picture	Stim;40;test;2;21;1;1079;2;2;1;right	Stim	40	test	2	21	1	1079	2	2	1	right	7018241	0	1	10998	1	0	next	other	0
+40	237	Picture	Stim;40;test;2;22;2;1671;2;2;1;right	Stim	40	test	2	22	2	1671	2	2	1	right	7059234	0	1	16831	1	0	next	other	0
+40	239	Picture	Stim;40;test;2;23;5;1072;1;1;1;right	Stim	40	test	2	23	5	1072	1	1	1	right	7108060	0	1	10832	1	0	next	other	0
+40	241	Picture	Stim;40;test;2;24;7;1458;1;1;1;right	Stim	40	test	2	24	7	1458	1	1	1	right	7159719	0	1	14664	1	0	next	other	0
+40	243	Picture	Stim;40;test;2;25;1;1226;2;2;1;right	Stim	40	test	2	25	1	1226	2	2	1	right	7224375	0	1	12331	1	0	next	other	0
+40	245	Picture	Stim;40;test;2;26;1;1945;2;2;1;right	Stim	40	test	2	26	1	1945	2	2	1	right	7266702	0	1	19497	1	0	next	other	0
+40	247	Picture	Stim;40;test;2;27;6;1676;1;1;1;right	Stim	40	test	2	27	6	1676	1	1	1	right	7316194	0	1	16831	1	0	next	other	0
+40	249	Picture	Stim;40;test;2;28;5;1716;1;2;0;right	Stim	40	test	2	28	5	1716	1	2	0	right	7378018	0	1	17331	1	0	next	other	0
+40	251	Picture	Stim;40;test;2;29;6;1461;1;1;1;right	Stim	40	test	2	29	6	1461	1	1	1	right	7436009	0	1	14664	1	0	next	other	0
+40	253	Picture	Stim;40;test;2;30;4;1270;2;1;0;right	Stim	40	test	2	30	4	1270	2	1	0	right	7495665	0	2	12833	2	0	next	other	0
+40	255	Picture	Stim;40;test;2;31;5;1391;1;2;0;right	Stim	40	test	2	31	5	1391	1	2	0	right	7545825	0	1	13998	1	0	next	other	0
+40	257	Picture	Stim;40;test;2;32;3;1801;2;2;1;right	Stim	40	test	2	32	3	1801	2	2	1	right	7600650	0	1	18164	1	0	next	other	0
+40	259	Picture	Stim;40;test;2;33;3;1678;2;2;1;right	Stim	40	test	2	33	3	1678	2	2	1	right	7653142	0	1	16831	1	0	next	other	0
+40	261	Picture	Stim;40;test;2;34;5;1846;1;1;1;right	Stim	40	test	2	34	5	1846	1	1	1	right	7704467	0	1	18664	1	0	next	other	0
+40	263	Picture	Stim;40;test;2;35;2;1267;2;2;1;right	Stim	40	test	2	35	2	1267	2	2	1	right	7763791	0	1	12831	1	0	next	other	0
+40	265	Picture	Stim;40;test;2;36;7;1191;1;1;1;right	Stim	40	test	2	36	7	1191	1	1	1	right	7808618	0	1	11998	1	0	next	other	0
+40	267	Picture	Stim;40;test;2;37;7;1716;1;1;1;right	Stim	40	test	2	37	7	1716	1	1	1	right	7870608	0	1	17331	1	0	next	other	0
+40	269	Picture	Stim;40;test;2;38;3;1966;2;1;0;right	Stim	40	test	2	38	3	1966	2	1	0	right	7937764	0	1	19830	1	0	next	other	0
+40	271	Picture	Stim;40;test;2;39;6;1732;1;1;1;right	Stim	40	test	2	39	6	1732	1	1	1	right	7991922	0	1	17497	1	0	next	other	0
+40	273	Picture	Stim;40;test;2;40;6;1370;1;1;1;right	Stim	40	test	2	40	6	1370	1	1	1	right	8054246	0	1	13831	1	0	next	other	0
+40	275	Picture	Stim;40;test;2;41;7;1713;1;1;1;right	Stim	40	test	2	41	7	1713	1	1	1	right	8113070	0	1	17331	1	0	next	other	0
+40	277	Picture	Stim;40;test;2;42;2;1615;2;2;1;right	Stim	40	test	2	42	2	1615	2	2	1	right	8180227	0	1	16331	1	0	next	other	0
+40	279	Picture	Stim;40;test;2;43;2;1453;2;1;0;right	Stim	40	test	2	43	2	1453	2	1	0	right	8228552	0	1	14664	1	0	next	other	0
+40	281	Picture	Stim;40;test;2;44;4;1575;2;2;1;right	Stim	40	test	2	44	4	1575	2	2	1	right	8275212	0	1	15831	1	0	next	other	0
+40	283	Picture	Stim;40;test;2;45;7;1803;1;0;0;right	Stim	40	test	2	45	7	1803	1	0	0	right	8328370	0	1	18164	1	0	next	other	0
+40	285	Picture	Stim;40;test;2;46;4;1766;2;2;1;right	Stim	40	test	2	46	4	1766	2	2	1	right	8396526	0	1	17831	1	0	next	other	0
+40	287	Picture	Stim;40;test;2;47;1;1492;2;2;1;right	Stim	40	test	2	47	1	1492	2	2	1	right	8451684	0	1	14998	1	0	next	other	0
+40	289	Picture	Stim;40;test;2;48;5;1021;1;2;0;right	Stim	40	test	2	48	5	1021	1	2	0	right	8496677	0	1	10332	1	0	next	other	0
+40	291	Picture	Stim;40;test;2;49;1;1662;2;2;1;right	Stim	40	test	2	49	1	1662	2	2	1	right	8547836	0	1	16831	1	0	next	other	0
+40	293	Picture	Instruction	Instruction											8594662	0	1	84820	1	0	next	other	0
+40	293	Response	1												8679309	84647	1
+40	294	Picture	Break	Break											8679482	0	1	53825	1	0	next	other	0
+40	294	Response	1												8733143	53661	0
+40	295	Picture	ITI	ITI											8733307	0	1	20164	1	0	next	other	0
+40	296	Picture	Stim;40;test;3;1;6;1278;1;1;1;right	Stim	40	test	3	1	6	1278	1	1	1	right	8753471	0	1	12831	1	0	next	other	0
+40	298	Picture	Stim;40;test;3;2;2;1211;2;2;1;right	Stim	40	test	3	2	2	1211	2	2	1	right	8811295	0	1	12165	1	0	next	other	0
+40	300	Picture	Stim;40;test;3;3;6;1541;1;1;1;right	Stim	40	test	3	3	6	1541	1	1	1	right	8855454	0	2	15499	2	0	next	other	0
+40	302	Picture	Stim;40;test;3;4;3;1495;2;2;1;right	Stim	40	test	3	4	3	1495	2	2	1	right	8915945	0	1	14998	1	0	next	other	0
+40	304	Picture	Stim;40;test;3;5;1;1222;2;2;1;right	Stim	40	test	3	5	1	1222	2	2	1	right	8965436	0	2	12333	2	0	next	other	0
+40	306	Picture	Stim;40;test;3;6;2;1018;2;2;1;right	Stim	40	test	3	6	2	1018	2	2	1	right	9007764	0	1	10332	1	0	next	other	0
+40	308	Picture	Stim;40;test;3;7;2;1764;2;2;1;right	Stim	40	test	3	7	2	1764	2	2	1	right	9050091	0	1	17831	1	0	next	other	0
+40	310	Picture	Stim;40;test;3;8;3;1826;2;2;1;right	Stim	40	test	3	8	3	1826	2	2	1	right	9099917	0	1	18331	1	0	next	other	0
+40	312	Picture	Stim;40;test;3;9;3;1435;2;2;1;right	Stim	40	test	3	9	3	1435	2	2	1	right	9152742	0	1	14498	1	0	next	other	0
+40	314	Picture	Stim;40;test;3;10;6;1550;1;1;1;right	Stim	40	test	3	10	6	1550	1	1	1	right	9201568	0	1	15664	1	0	next	other	0
+40	316	Picture	Stim;40;test;3;11;6;1638;1;1;1;right	Stim	40	test	3	11	6	1638	1	1	1	right	9262058	0	1	16497	1	0	next	other	0
+40	318	Picture	Stim;40;test;3;12;7;1188;1;1;1;right	Stim	40	test	3	12	7	1188	1	1	1	right	9323549	0	1	11998	1	0	next	other	0
+40	320	Picture	Stim;40;test;3;13;1;1315;2;2;1;right	Stim	40	test	3	13	1	1315	2	2	1	right	9385539	0	1	13331	1	0	next	other	0
+40	322	Picture	Stim;40;test;3;14;3;1666;2;2;1;right	Stim	40	test	3	14	3	1666	2	2	1	right	9428866	0	1	16831	1	0	next	other	0
+40	324	Picture	Stim;40;test;3;15;7;1474;1;1;1;right	Stim	40	test	3	15	7	1474	1	1	1	right	9480024	0	1	14831	1	0	next	other	0
+40	326	Picture	Stim;40;test;3;16;4;1643;2;2;1;right	Stim	40	test	3	16	4	1643	2	2	1	right	9544848	0	1	16497	1	0	next	other	0
+40	328	Picture	Stim;40;test;3;17;7;1641;1;1;1;right	Stim	40	test	3	17	7	1641	1	1	1	right	9598673	0	1	16497	1	0	next	other	0
+40	330	Picture	Stim;40;test;3;18;2;1971;2;2;1;right	Stim	40	test	3	18	2	1971	2	2	1	right	9665162	0	1	19830	1	0	next	other	0
+40	332	Picture	Stim;40;test;3;19;4;1444;2;0;0;right	Stim	40	test	3	19	4	1444	2	0	0	right	9716988	0	1	14498	1	0	next	other	0
+40	334	Picture	Stim;40;test;3;20;5;1417;1;2;0;right	Stim	40	test	3	20	5	1417	1	2	0	right	9768813	0	1	14331	1	0	next	other	0
+40	336	Picture	Stim;40;test;3;21;3;1114;2;2;1;right	Stim	40	test	3	21	3	1114	2	2	1	right	9823804	0	1	11332	1	0	next	other	0
+40	338	Picture	Stim;40;test;3;22;2;1318;2;2;1;right	Stim	40	test	3	22	2	1318	2	2	1	right	9869464	0	1	13331	1	0	next	other	0
+40	340	Picture	Stim;40;test;3;23;7;1658;1;1;1;right	Stim	40	test	3	23	7	1658	1	1	1	right	9914790	0	1	16664	1	0	next	other	0
+40	342	Picture	Stim;40;test;3;24;7;1889;1;1;1;right	Stim	40	test	3	24	7	1889	1	1	1	right	9981446	0	1	18997	1	0	next	other	0
+40	344	Picture	Stim;40;test;3;25;5;1862;1;1;1;right	Stim	40	test	3	25	5	1862	1	1	1	right	10050436	0	1	18830	1	0	next	other	0
+40	346	Picture	Stim;40;test;3;26;1;1352;2;0;0;right	Stim	40	test	3	26	1	1352	2	0	0	right	10109926	0	1	13665	1	0	next	other	0
+40	348	Picture	Stim;40;test;3;27;6;1136;1;1;1;right	Stim	40	test	3	27	6	1136	1	1	1	right	10153586	0	1	11498	1	0	next	other	0
+40	350	Picture	Stim;40;test;3;28;1;1647;2;2;1;right	Stim	40	test	3	28	1	1647	2	2	1	right	10210077	0	1	16664	1	0	next	other	0
+40	352	Picture	Stim;40;test;3;29;7;1728;1;1;1;right	Stim	40	test	3	29	7	1728	1	1	1	right	10256737	0	1	17331	1	0	next	other	0
+40	354	Picture	Stim;40;test;3;30;6;1697;1;2;0;right	Stim	40	test	3	30	6	1697	1	2	0	right	10324060	0	1	17164	1	0	next	other	0
+40	356	Picture	Stim;40;test;3;31;4;1443;2;2;1;right	Stim	40	test	3	31	4	1443	2	2	1	right	10386050	0	1	14498	1	0	next	other	0
+40	358	Picture	Stim;40;test;3;32;2;2000;2;2;1;right	Stim	40	test	3	32	2	2000	2	2	1	right	10437875	0	1	20164	1	0	next	other	0
+40	360	Picture	Stim;40;test;3;33;1;1755;2;2;1;right	Stim	40	test	3	33	1	1755	2	2	1	right	10490034	0	1	17664	1	0	next	other	0
+40	362	Picture	Stim;40;test;3;34;4;1934;2;0;0;right	Stim	40	test	3	34	4	1934	2	0	0	right	10537693	0	1	19497	1	0	next	other	0
+40	364	Picture	Stim;40;test;3;35;3;1277;2;2;1;right	Stim	40	test	3	35	3	1277	2	2	1	right	10594518	0	1	12831	1	0	next	other	0
+40	366	Picture	Stim;40;test;3;36;5;1439;1;1;1;right	Stim	40	test	3	36	5	1439	1	1	1	right	10641844	0	1	14498	1	0	next	other	0
+40	368	Picture	Stim;40;test;3;37;7;1684;1;1;1;right	Stim	40	test	3	37	7	1684	1	1	1	right	10697168	0	1	16997	1	0	next	other	0
+40	370	Picture	Stim;40;test;3;38;3;1006;2;2;1;right	Stim	40	test	3	38	3	1006	2	2	1	right	10763991	0	1	10165	1	0	next	other	0
+40	372	Picture	Stim;40;test;3;39;4;1860;2;2;1;right	Stim	40	test	3	39	4	1860	2	2	1	right	10808651	0	1	18664	1	0	next	other	0
+40	374	Picture	Stim;40;test;3;40;1;1807;2;0;0;right	Stim	40	test	3	40	1	1807	2	0	0	right	10864642	0	1	18164	1	0	next	other	0
+40	376	Picture	Stim;40;test;3;41;1;1066;2;2;1;right	Stim	40	test	3	41	1	1066	2	2	1	right	10912801	0	1	10832	1	0	next	other	0
+40	378	Picture	Stim;40;test;3;42;5;1043;1;1;1;right	Stim	40	test	3	42	5	1043	1	1	1	right	10953628	0	1	10498	1	0	next	other	0
+40	380	Picture	Stim;40;test;3;43;4;1350;2;1;0;right	Stim	40	test	3	43	4	1350	2	1	0	right	11004954	0	1	13665	1	0	next	other	0
+40	382	Picture	Stim;40;test;3;44;4;1196;2;2;1;right	Stim	40	test	3	44	4	1196	2	2	1	right	11055946	0	1	12165	1	0	next	other	0
+40	384	Picture	Stim;40;test;3;45;6;1586;1;1;1;right	Stim	40	test	3	45	6	1586	1	1	1	right	11105272	0	1	15998	1	0	next	other	0
+40	386	Picture	Stim;40;test;3;46;5;1770;1;1;1;right	Stim	40	test	3	46	5	1770	1	1	1	right	11166262	0	1	17831	1	0	next	other	0
+40	388	Picture	Stim;40;test;3;47;2;1617;2;2;1;right	Stim	40	test	3	47	2	1617	2	2	1	right	11224920	0	1	16331	1	0	next	other	0
+40	390	Picture	Stim;40;test;3;48;5;1528;1;1;1;right	Stim	40	test	3	48	5	1528	1	1	1	right	11273246	0	1	15331	1	0	next	other	0
+40	392	Picture	Stim;40;test;3;49;5;1725;1;2;0;right	Stim	40	test	3	49	5	1725	1	2	0	right	11329403	0	1	17331	1	0	next	other	0
+40	394	Picture	Instruction	Instruction											11387561	0	1	159808	1	0	next	other	0
+40	394	Response	1												11547163	159602	1
+40	395	Picture	Break	Break											11547369	0	1	291621	1	0	next	other	0
+40	395	Response	1												11838812	291442	1
+40	396	Picture	ITI	ITI											11838991	0	1	20163	1	0	next	other	0
+40	397	Picture	Stim;40;test;4;1;3;1508;2;2;1;right	Stim	40	test	4	1	3	1508	2	2	1	right	11859154	0	1	15164	1	0	next	other	0
+40	399	Picture	Stim;40;test;4;2;7;1445;1;1;1;right	Stim	40	test	4	2	7	1445	1	1	1	right	11908813	0	1	14664	1	0	next	other	0
+40	401	Picture	Stim;40;test;4;3;2;1275;2;2;1;right	Stim	40	test	4	3	2	1275	2	2	1	right	11973303	0	1	12831	1	0	next	other	0
+40	403	Picture	Stim;40;test;4;4;7;1865;1;1;1;right	Stim	40	test	4	4	7	1865	1	1	1	right	12018130	0	1	18831	1	0	next	other	0
+40	405	Picture	Stim;40;test;4;5;3;1569;2;2;1;right	Stim	40	test	4	5	3	1569	2	2	1	right	12086786	0	1	15831	1	0	next	other	0
+40	407	Picture	Stim;40;test;4;6;3;1475;2;2;1;right	Stim	40	test	4	6	3	1475	2	2	1	right	12136945	0	1	14831	1	0	next	other	0
+40	409	Picture	Stim;40;test;4;7;4;1174;2;2;1;right	Stim	40	test	4	7	4	1174	2	2	1	right	12186270	0	1	11831	1	0	next	other	0
+40	411	Picture	Stim;40;test;4;8;1;1322;2;2;1;right	Stim	40	test	4	8	1	1322	2	2	1	right	12235429	0	1	13331	1	0	next	other	0
+40	413	Picture	Stim;40;test;4;9;3;1485;2;0;0;right	Stim	40	test	4	9	3	1485	2	0	0	right	12278756	0	1	14998	1	0	next	other	0
+40	415	Picture	Stim;40;test;4;10;1;1039;2;0;0;right	Stim	40	test	4	10	1	1039	2	0	0	right	12328081	0	1	10498	1	0	next	other	0
+40	417	Picture	Stim;40;test;4;11;6;1871;1;1;1;right	Stim	40	test	4	11	6	1871	1	1	1	right	12368575	0	1	18831	1	0	next	other	0
+40	419	Picture	Stim;40;test;4;12;6;1209;1;1;1;right	Stim	40	test	4	12	6	1209	1	1	1	right	12432398	0	1	12165	1	0	next	other	0
+40	421	Picture	Stim;40;test;4;13;2;1681;2;2;1;right	Stim	40	test	4	13	2	1681	2	2	1	right	12489556	0	1	16997	1	0	next	other	0
+40	423	Picture	Stim;40;test;4;14;5;1675;1;1;1;right	Stim	40	test	4	14	5	1675	1	1	1	right	12538549	0	1	16831	1	0	next	other	0
+40	425	Picture	Stim;40;test;4;15;1;1002;2;2;1;right	Stim	40	test	4	15	1	1002	2	2	1	right	12596206	0	1	10165	1	0	next	other	0
+40	427	Picture	Stim;40;test;4;16;2;1561;2;2;1;right	Stim	40	test	4	16	2	1561	2	2	1	right	12636367	0	1	15664	1	0	next	other	0
+40	429	Picture	Stim;40;test;4;17;2;1333;2;2;1;right	Stim	40	test	4	17	2	1333	2	2	1	right	12684026	0	1	13498	1	0	next	other	0
+40	431	Picture	Stim;40;test;4;18;3;1807;2;2;1;right	Stim	40	test	4	18	3	1807	2	2	1	right	12729519	0	1	18164	1	0	next	other	0
+40	433	Picture	Stim;40;test;4;19;2;1681;2;2;1;right	Stim	40	test	4	19	2	1681	2	2	1	right	12782177	0	1	16997	1	0	next	other	0
+40	435	Picture	Stim;40;test;4;20;4;1410;2;2;1;right	Stim	40	test	4	20	4	1410	2	2	1	right	12831170	0	1	14164	1	0	next	other	0
+40	437	Picture	Stim;40;test;4;21;6;1858;1;1;1;right	Stim	40	test	4	21	6	1858	1	1	1	right	12882662	0	1	18664	1	0	next	other	0
+40	439	Picture	Stim;40;test;4;22;7;1131;1;1;1;right	Stim	40	test	4	22	7	1131	1	1	1	right	12946319	0	1	11498	1	0	next	other	0
+40	441	Picture	Stim;40;test;4;23;4;1857;2;0;0;right	Stim	40	test	4	23	4	1857	2	0	0	right	13007642	0	1	18664	1	0	next	other	0
+40	443	Picture	Stim;40;test;4;24;5;1228;1;1;1;right	Stim	40	test	4	24	5	1228	1	1	1	right	13063634	0	1	12332	1	0	next	other	0
+40	445	Picture	Stim;40;test;4;25;3;1941;2;2;1;right	Stim	40	test	4	25	3	1941	2	2	1	right	13116792	0	1	19497	1	0	next	other	0
+40	447	Picture	Stim;40;test;4;26;5;1820;1;1;1;right	Stim	40	test	4	26	5	1820	1	1	1	right	13170784	0	1	18330	1	0	next	other	0
+40	449	Picture	Stim;40;test;4;27;6;1101;1;1;1;right	Stim	40	test	4	27	6	1101	1	1	1	right	13229941	0	1	11165	1	0	next	other	0
+40	451	Picture	Stim;40;test;4;28;1;1181;2;0;0;right	Stim	40	test	4	28	1	1181	2	0	0	right	13285932	0	1	11998	1	0	next	other	0
+40	453	Picture	Stim;40;test;4;29;7;1935;1;1;1;right	Stim	40	test	4	29	7	1935	1	1	1	right	13327926	0	1	19497	1	0	next	other	0
+40	455	Picture	Stim;40;test;4;30;5;1228;1;1;1;right	Stim	40	test	4	30	5	1228	1	1	1	right	13397415	0	1	12331	1	0	next	other	0
+40	457	Picture	Stim;40;test;4;31;7;1310;1;1;1;right	Stim	40	test	4	31	7	1310	1	1	1	right	13450574	0	1	13165	1	0	next	other	0
+40	459	Picture	Stim;40;test;4;32;6;1471;1;1;1;right	Stim	40	test	4	32	6	1471	1	1	1	right	13513730	0	1	14831	1	0	next	other	0
+40	461	Picture	Stim;40;test;4;33;4;1707;2;2;1;right	Stim	40	test	4	33	4	1707	2	2	1	right	13573554	0	1	17164	1	0	next	other	0
+40	463	Picture	Stim;40;test;4;34;4;1326;2;2;1;right	Stim	40	test	4	34	4	1326	2	2	1	right	13628046	0	1	13331	1	0	next	other	0
+40	465	Picture	Stim;40;test;4;35;7;1665;1;1;1;right	Stim	40	test	4	35	7	1665	1	1	1	right	13678705	0	1	16831	1	0	next	other	0
+40	467	Picture	Stim;40;test;4;36;7;1238;1;1;1;right	Stim	40	test	4	36	7	1238	1	1	1	right	13745361	0	1	12498	1	0	next	other	0
+40	469	Picture	Stim;40;test;4;37;1;1942;2;2;1;right	Stim	40	test	4	37	1	1942	2	2	1	right	13807851	0	1	19497	1	0	next	other	0
+40	471	Picture	Stim;40;test;4;38;4;1506;2;0;0;right	Stim	40	test	4	38	4	1506	2	0	0	right	13857344	0	1	15164	1	0	next	other	0
+40	473	Picture	Stim;40;test;4;39;3;1044;2;0;0;right	Stim	40	test	4	39	3	1044	2	0	0	right	13909835	0	1	10498	1	0	next	other	0
+40	475	Picture	Stim;40;test;4;40;6;1986;1;0;0;right	Stim	40	test	4	40	6	1986	1	0	0	right	13954829	0	1	19997	1	0	next	other	0
+40	477	Picture	Stim;40;test;4;41;5;1149;1;1;1;right	Stim	40	test	4	41	5	1149	1	1	1	right	14019818	0	1	11665	1	0	next	other	0
+40	479	Picture	Stim;40;test;4;42;4;1554;2;2;1;right	Stim	40	test	4	42	4	1554	2	2	1	right	14072144	0	1	15664	1	0	next	other	0
+40	481	Picture	Stim;40;test;4;43;2;1066;2;2;1;right	Stim	40	test	4	43	2	1066	2	2	1	right	14125135	0	1	10832	1	0	next	other	0
+40	483	Picture	Stim;40;test;4;44;1;1364;2;2;1;right	Stim	40	test	4	44	1	1364	2	2	1	right	14167962	0	1	13831	1	0	next	other	0
+40	485	Picture	Stim;40;test;4;45;1;1138;2;0;0;right	Stim	40	test	4	45	1	1138	2	0	0	right	14211789	0	1	11498	1	0	next	other	0
+40	487	Picture	Stim;40;test;4;46;5;1682;1;2;0;right	Stim	40	test	4	46	5	1682	1	2	0	right	14253282	0	1	16997	1	0	next	other	0
+40	489	Picture	Stim;40;test;4;47;5;1095;1;1;1;right	Stim	40	test	4	47	5	1095	1	1	1	right	14310940	0	1	10998	1	0	next	other	0
+40	491	Picture	Stim;40;test;4;48;2;1646;2;0;0;right	Stim	40	test	4	48	2	1646	2	0	0	right	14362765	0	1	16664	1	0	next	other	0
+40	493	Picture	Stim;40;test;4;49;6;1130;1;1;1;right	Stim	40	test	4	49	6	1130	1	1	1	right	14411424	0	1	11498	1	0	next	other	0
+40	495	Picture	Instruction	Instruction											14467749	0	1	250294	1	0	next	other	0
+40	495	Response	1												14717865	250116	1
+40	496	Picture	Break	Break											14718043	0	1	9165	1	0	next	other	0
+40	496	Response	1												14727143	9100	0
+40	497	Picture	ITI	ITI											14727208	0	1	20164	1	0	next	other	0
+40	498	Picture	Instruction	Instruction											14747372	0	1	16669	1	0	next	other	0
+40	498	Response	1												14753301	5929	1
+
+
+{
+   "app": "Presentation Version 20.1 Build 12.04.17",
+   "device": "LENOVO 10FGCTO1WW",
+   "experiment": "{772213B2-5F0F-4A35-9C2F-36954700C7EA}",
+   "os": "Windows 7 64 bit",
+   "package": "",
+   "parameters": {
+      "configuration": "Default configuration"
+   },
+   "scenario": "Bisection Task with Dynanometer.sce",
+   "subject": "40",
+   "timestamp": "2018/10/10 07:32:29 GMT"
+}
