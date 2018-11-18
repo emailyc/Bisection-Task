@@ -63,7 +63,7 @@ trial {
 			x = 0; 
 			y = 0;
 		};
-		port_code = 3;
+		# port_code = 3;
 		code = "Instruction";
 	} instruct_event;
 } instruct_trial; # for practice instr and test instr, manually replace caption
@@ -80,7 +80,8 @@ trial {
 				preload = false; 
 			}; 
 		} sound_anchors;
-		code = "";	
+		port_code = 3;
+		code = "onset";	
 	} sound_event;	
 	
 	stimulus_event { 
